@@ -322,6 +322,16 @@ class LandingPage extends Component {
             </div>
         </div> */}
 
+<div className="container_settings"id="howItWorks">
+            <div className="container-fluid">
+                <h2 className="section_heading text_grey">Subscription Plans</h2>
+                <p className="section_sub_heading text_grey"> ImageMark Pro was developed with the help of video journalists, photographers, to provide a flexible and intuitive video and
+                    photo marking solution for professionals or newbies.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+             </div>
+        </div>
+ 
+
         <div className="lightBlue_bg container_settings">
             <div className="container-fluid">
                 <h2 className="section_heading text_grey">Customer Testimonials</h2>
