@@ -510,6 +510,70 @@ a.imp_play_icon {
     }
 }
 
+/* Subscription */
+
+.subscription-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.subscription-card{
+    border:2px solid #27a1d0;
+    padding:0 !important;
+    border-radius: 10px;
+    margin-top:50px;
+}
+
+.subscription-card-heading{
+    height:40px;
+    background-color: #27a1d0;
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px;
+    color:#fff;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subscription-card-price{
+    margin:15px auto;
+}
+
+.subscription-card-price .price{
+    font-size: 30px;
+    color:#27a1d0;
+}
+
+.subscription-card-price .text{
+    color:#27a1d0;
+}
+
+.feature-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:11px;
+    margin:15px 4px;
+    font-weight: bold;
+}
+
+.subscription-card .back-icon{
+    width:8px;
+    height:8px;
+    transform: rotate(180deg);
+    margin:0;
+}
+
+.buy{
+    border-radius: 20px;
+    background-color:#27a1d0;
+    color:#fff;
+    outline:none;
+    border: none;
+    padding: 10px auto;
+}
+
 /*Customer Testimonals*/
 .carousel-item {
     margin: 0 auto;
