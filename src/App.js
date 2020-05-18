@@ -10,6 +10,8 @@ const LoggedInComponent = lazy(() => import("./logged_in/components/Main"));
 
 const LoggedOutComponent = lazy(() => import("./logged_out/components/Main"));
 
+const LandingPage = lazy(() => import("./landing"));
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +21,12 @@ function App() {
         <Pace color={theme.palette.primary.light} />
         <Suspense fallback={<Fragment />}>
           <Switch>
-            <Route path="/c">
+
+           <Route path="/">
+              <LandingPage />
+            </Route>
+          
+            <Route path="/cc">
               <LoggedInComponent />
             </Route>
             <Route>

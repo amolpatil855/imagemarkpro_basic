@@ -15,6 +15,30 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+
+
+
+      <!--    Custom Stylying  -->
+      <link rel="stylesheet" href="style/style.css">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+      <!-- Poopins Font-->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  
+      <!-- Scrool Animation-->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+      <!-- Owl Stylesheets -->
+      <link rel="stylesheet" href="style/overwrite.css">
+      <link rel="stylesheet" href="style/owl.carousel.min.css">
+      <link rel="stylesheet" href="style/owl.theme.default.min.css">
+  
+      <!--Custom Carousel Stylesheet-->
+  
+
+      
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
@@ -22,6 +46,9 @@
       sizes="180x180"
       href="%PUBLIC_URL%/apple-touch-icon.png"
     />
+
+
+  
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -58,5 +85,114 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+
+     <!-- Optional JavaScript -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!-- javascript -->
+     <script src="js/owl.carousel.min.js"></script>
+    
+     <script>
+         AOS.init();
+ 
+     </script>
+ 
+     <script>
+         //Hero Section Height
+         $(document).ready(function() {
+             function setHeight() {
+                 windowHeight = $(window).innerHeight();
+                 windowWidth = $(window).innerWidth();
+                 //                $('.bgImage').css('min-height', windowHeight);
+                 $('.bgImage').css('min-width', windowWidth);
+ 
+             };
+             setHeight();
+ 
+             $(window).resize(function() {
+                 setHeight();
+             });
+ 
+             //Navigation After scroll color 
+             $(window).scroll(function() {
+                 $('#ImpNav').toggleClass("navBg", ($(window).scrollTop() > 1));
+                 $('#navbarNavDropdown .navbar-nav .nav-item a.nav-link').toggleClass("changeLinkColor", ($(window).scrollTop() > 1));
+                 $('.nav-link.register-cta').toggleClass("addBorder", ($(window).scrollTop() > 1));
+             });
+ 
+             if (($(window).scrollTop() > 50)) {
+                 $('#ImpNav').toggleClass("navBg");
+                 $('#navbarNavDropdown .navbar-nav .nav-item a.nav-link').toggleClass("changeLinkColor");
+                 $('.nav-link.register-cta').toggleClass("addBorder");
+             }
+             //Adding active class to tabs inner section
+             $(".step a").click(function() {
+                 $(".step a").removeClass("active-tab");
+                 $(this).toggleClass('active-tab');
+             });
+             //Owl Carousel
+             $('.loop').owlCarousel({
+                 center: true,
+                 items: 2,
+                 loop: true,
+                 margin: 10,
+                 responsive: {
+                     600: {
+                         items: 4
+                     }
+                 }
+             });
+             //Setting Profile_Images
+             $('.Jerry_G').attr("src", "images/Jerry_G.jpg");
+             $('.Jerry_G').css("opacity", "1");
+             $('.Rodolfo_G').attr("src", "images/Rodolfo_G.jpg");
+             $('.Rodolfo_G').css("opacity", "1");
+ 
+         });
+ 
+         //Tab Menu Image Change Function    
+         function Imagechange(val) {
+             if (val == 1) {
+                 $('#IMP_app_images').attr("src", "images/select_edit_image.png");
+             }
+             if (val == 2) {
+                 $('#IMP_app_images').attr("src", "images/edit_image.png");
+             }
+             if (val == 3) {
+                 $('#IMP_app_images').attr("src", "images/share_save.png");
+             }
+         }
+ 
+         function Imagechange_video(val) {
+             if (val == 1) {
+                 $('#IMP_app_images_video').attr("src", "images/video_gallery.png");
+             }
+             if (val == 2) {
+                 $('#IMP_app_images_video').attr("src", "images/edit_video.png");
+             }
+             if (val == 3) {
+                 $('#IMP_app_images_video').attr("src", "images/share_save_video.png");
+             }
+         }
+ 
+         function Imagechange_live(val) {
+             if (val == 1) {
+                 $('#IMP_app_images_live').attr("src", "images/1.png");
+             }
+             if (val == 2) {
+                 $('#IMP_app_images_live').attr("src", "images/2.png");
+             }
+             if (val == 3) {
+                 $('#IMP_app_images_live').attr("src", "images/3.png");
+             }
+         }
+ 
+     </script>
+ 
+
   </body>
 </html>
