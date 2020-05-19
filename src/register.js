@@ -1,6 +1,6 @@
 import React, { Component, memo } from "react";
 import PropTypes from "prop-types";
-import { Link , Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import {
     AppBar,
     Toolbar,
@@ -81,9 +81,11 @@ class LoginPage extends Component {
     constructor(props) {
         super();
         this.state = {
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
-            redirect : false
+            redirect: false
         }
 
     }
@@ -91,30 +93,30 @@ class LoginPage extends Component {
 
 
 
-    signinUser = () => {
+    signUpUser = () => {
 
-        console.log("login by ", this.state);
-        
-       let user =  {
-        email : this.state.email,
-        password :  this.state.password
-       }
+        console.log("signup by ", this.state);
 
-        localStorage.setItem("currentUser_imagemarkpro" , JSON.stringify(user));
-        
-        if(this.state.email === "admin"){
-            this.setState({ redirect : true});
-        }
-       
+        // let user = {
+        //     email: this.state.email,
+        //     password: this.state.password
+        // }
+
+        // localStorage.setItem("currentUser_imagemarkpro", JSON.stringify(user));
+
+        // if (this.state.email === "admin") {
+        //     this.setState({ redirect: true });
+        // }
+
 
     }
 
 
     renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/c' />
+            return <Redirect to='/c' />
         }
-      }
+    }
 
     render() {
 
@@ -224,69 +226,99 @@ class LoginPage extends Component {
                                 <LockOutlinedIcon />
                             </Avatar>
                             <Typography component="h1" variant="h5">
-                                Sign in
+                                Sign up
         </Typography>
                             <form className={classes.form} noValidate>
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    value={this.state.email}
-                                    onChange={(e) => this.setState({ email: e.target.value })}
-                                    id="email"
-                                    label="Email Address"
-                                    name="email"
-                                    autoComplete="email"
-                                    autoFocus
-                                />
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
+                                <Grid container spacing={2}>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            autoComplete="fname"
+                                            name="firstName"
+                                            value={this.state.firstName}
+                                            onChange={(e) => this.setState({ firstName: e.target.value })}
+                                            variant="outlined"
+                                            required
+                                            fullWidth
+                                            id="firstName"
+                                            label="First Name"
+                                            autoFocus
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            variant="outlined"
+                                            required
+                                            fullWidth
+                                            id="lastName"
+                                            value={this.state.lastName}
+                                            onChange={(e) => this.setState({ lastName: e.target.value })}
+                                            label="Last Name"
+                                            name="lastName"
+                                            autoComplete="lname"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            variant="outlined"
+                                            required
+                                            fullWidth
+                                            value={this.state.email}
+                                            onChange={(e) => this.setState({ email: e.target.value })}
+                                            id="email"
+                                            label="Email Address"
+                                            name="email"
+                                            autoComplete="email"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            variant="outlined"
+                                            required
+                                            fullWidth
+                                            value={this.state.password}
+                                            onChange={(e) => this.setState({ password: e.target.value })}
+                                            name="password"
+                                            label="Password"
+                                            type="password"
+                                            id="password"
+                                            autoComplete="current-password"
+                                        />
+                                    </Grid>
 
-                                    value={this.state.password}
-                                    onChange={(e) => this.setState({ password: e.target.value })}
-                                    name="password"
-                                    label="Password"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="current-password"
-                                />
-                                <FormControlLabel
-                                    control={<Checkbox value="remember" color="primary" />}
-                                    label="Remember me"
-                                />
+                              
+
+                                    <Grid item xs={12}>
+                                        <FormControlLabel
+                                            control={<Checkbox value="allowExtraEmails" color="primary" />}
+                                            label="I want to receive inspiration, marketing promotions and updates via email."
+                                        />
+                                    </Grid>
+                                </Grid>
                                 <Button
                                     // type="submit"
+                                    onClick={() => this.signUpUser()}
                                     fullWidth
                                     variant="contained"
                                     color="primary"
-                                    // className={classes.submit}
-                                    onClick={() => this.signinUser()}
+                                    className={classes.submit}
                                 >
-                                    Sign In
-                              </Button>
-                                <Grid container>
-                                    <Grid item xs>
-                                        <Link href="#" variant="body2">
-                                            Forgot password?
-              </Link>
-                                    </Grid>
+                                    Sign Up
+          </Button>
+                                <Grid container justify="flex-end">
                                     <Grid item>
-                                        <Link href="#" variant="body2">
-                                            {"Don't have an account? Sign Up"}
-                                        </Link>
+                                        <Link to="/login" variant="body2">
+                                            Already have an account? Sign in
+              </Link>
                                     </Grid>
                                 </Grid>
                             </form>
                         </div>
-                        <Box mt={8}>
-                            {/* <Copyright /> */}
+                        <Box mt={5}>
+                            <StripeCheckoutButton />
                         </Box>
-                        <StripeCheckoutButton />
                     </Container>
+
+
 
                 </div>
             </div>

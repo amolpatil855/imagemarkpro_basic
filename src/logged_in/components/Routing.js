@@ -67,7 +67,7 @@ function Routing(props) {
   return (
     <div className={classes.wrapper}>
       <Switch>
-        <PropsRoute
+        {/* <PropsRoute
           path="/c/posts"
           component={Posts}
           EmojiTextArea={EmojiTextArea}
@@ -78,15 +78,15 @@ function Routing(props) {
           posts={posts}
           setPosts={setPosts}
           selectPosts={selectPosts}
-        />
-        <PropsRoute
+        /> */}
+        {/* <PropsRoute
           path="/c/subscription"
           component={Subscription}
           transactions={transactions}
           pushMessageToSnackbar={pushMessageToSnackbar}
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
-        />
+        /> */}
         <PropsRoute
           path=""
           component={Dashboard}

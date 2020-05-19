@@ -167,40 +167,40 @@ function NavBar(props) {
         mobile: <DashboardIcon className="text-white" />
       }
     },
-    {
-      link: "/c/posts",
-      name: "Posts",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <ImageIcon
-            className={
-              selectedTab === "Posts" ? classes.textPrimary : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <ImageIcon className="text-white" />
-      }
-    },
-    {
-      link: "/c/subscription",
-      name: "Subscription",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <AccountBalanceIcon
-            className={
-              selectedTab === "Subscription"
-                ? classes.textPrimary
-                : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <AccountBalanceIcon className="text-white" />
-      }
-    },
+    // {
+    //   link: "/c/posts",
+    //   name: "Posts",
+    //   onClick: closeMobileDrawer,
+    //   icon: {
+    //     desktop: (
+    //       <ImageIcon
+    //         className={
+    //           selectedTab === "Posts" ? classes.textPrimary : "text-white"
+    //         }
+    //         fontSize="small"
+    //       />
+    //     ),
+    //     mobile: <ImageIcon className="text-white" />
+    //   }
+    // },
+    // {
+    //   link: "/c/subscription",
+    //   name: "Subscription",
+    //   onClick: closeMobileDrawer,
+    //   icon: {
+    //     desktop: (
+    //       <AccountBalanceIcon
+    //         className={
+    //           selectedTab === "Subscription"
+    //             ? classes.textPrimary
+    //             : "text-white"
+    //         }
+    //         fontSize="small"
+    //       />
+    //     ),
+    //     mobile: <AccountBalanceIcon className="text-white" />
+    //   }
+    // },
     {
       link: "/",
       name: "Logout",
@@ -264,7 +264,7 @@ function NavBar(props) {
                 />
               </Box>
             )}
-            <MessagePopperButton messages={messages} />
+            {/* <MessagePopperButton messages={messages} /> */}
             <ListItem
               disableGutters
               className={classNames(classes.iconListItem, classes.smBordered)}
@@ -284,14 +284,14 @@ function NavBar(props) {
               )}
             </ListItem>
           </Box>
-          <IconButton
+          {/* <IconButton
             onClick={openDrawer}
             color="primary"
             aria-label="Open Sidedrawer"
           >
             <SupervisorAccountIcon />
-          </IconButton>
-          <SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} />
+          </IconButton> */}
+          {/* <SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} /> */}
         </Toolbar>
       </AppBar>
       <Hidden xsDown>
