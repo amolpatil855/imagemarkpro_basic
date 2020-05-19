@@ -98,13 +98,18 @@ class LoginPage extends Component {
         password :  this.state.password
        }
 
-        localStorage.setItem("currentUser_imagemarkpro" , JSON.stringify(user));
-        
-        if(this.state.email === "admin"){
-            this.setState({ redirect : true});
-        }
-       
+       let users = JSON.parse(localStorage.getItem("users"));
+     
+        users.map( (user, index) =>{
 
+            if(user.email === this.state.email){
+                if(user.password === this.state.password){
+                    localStorage.setItem("currentUser" , user );
+                    this.setState({ redirect : true});
+                }
+            }
+        })
+ 
     }
 
 
@@ -118,7 +123,7 @@ class LoginPage extends Component {
 
         const menuItems = [
             {
-                link: "/",
+                link: "/c",
                 name: "Home",
                 icon: <HomeIcon className="text-white" />
             },
@@ -157,7 +162,7 @@ class LoginPage extends Component {
                         <div>
 
                             <a class="navbar-brand"
-                                href="/"><img src="images/IMP_Logo.png"
+                                href="/c"><img src="images/IMP_Logo.png"
                                     alt="Image Mark Pro" /></a>
                         </div>
                         <div>

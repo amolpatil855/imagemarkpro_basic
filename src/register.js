@@ -117,7 +117,7 @@ class LoginPage extends Component {
   render() {
     const menuItems = [
       {
-        link: "/",
+        link: "/c",
         name: "Home",
         icon: <HomeIcon className="text-white" />,
       },

@@ -245,7 +245,7 @@ function NavBar(props) {
               >
                 Ver
               </Typography> */}
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="/c">
                 <img src="images/IMP_Logo.png" 
                 alt="Image Mark Pro" /></a>
             </Hidden>
