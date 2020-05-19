@@ -6,7 +6,6 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-              <StripeCheckoutButton />
                   <div>
         <nav className="navbar navbar-expand-lg navbar-light sticky-top" id="ImpNav">
             <a className="navbar-brand" href="#">
@@ -582,6 +581,7 @@ class LandingPage extends Component {
             </div>
         </div>
     </div>
+    <StripeCheckoutButton />
    
             </div>
         );
