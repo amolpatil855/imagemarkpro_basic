@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 return ( <Route
     {...rest}
     render={props =>
-      isAuthed.email !== "" ? (
+      isAuthed && isAuthed.email !== "" ? (
         <Component {...props} />
       ) : (
           <Redirect
