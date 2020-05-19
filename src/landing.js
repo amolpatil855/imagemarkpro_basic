@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StripeCheckoutButton from './shared/components/Stripe';
+import {Link} from 'react-router-dom';
 
 const PLANS = [
   {

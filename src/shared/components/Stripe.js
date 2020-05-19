@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
 const StripeCheckoutButton = ({price}) => {
-    const priceForStripe = 200 * 100;
+    const priceForStripe = 200;
     const publishableKey = process.env.REACT_APP_PUBLISHABLE_KEY
 
     const onToken = token => {
@@ -35,8 +35,8 @@ const StripeCheckoutButton = ({price}) => {
             billingAddress
             shippingAddress
             image='https://sendeyo.com/up/d/f3eb2117da'
-            description={`Your total is Rs ${priceForStripe}`}
-            amount={priceForStripe}
+            description='Selected Plan - GOLD'
+            amount={priceForStripe * 100}
             panelLabel='Pay Now'
             token={onToken}
             stripeKey={publishableKey}
