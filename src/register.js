@@ -105,6 +105,7 @@ class LoginPage extends Component {
     users.push(user);
 
     localStorage.setItem('users',JSON.stringify(users));
+    localStorage.setItem('currentUser',JSON.stringify(user));
     this.setState({redirect:true},() => this.renderRedirect());
   };
 
@@ -117,7 +118,7 @@ class LoginPage extends Component {
   render() {
     const menuItems = [
       {
-        link: "/",
+        link: "/c",
         name: "Home",
         icon: <HomeIcon className="text-white" />,
       },

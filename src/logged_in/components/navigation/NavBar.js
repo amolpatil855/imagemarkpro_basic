@@ -134,6 +134,9 @@ function NavBar(props) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
 
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
   }, [setIsMobileOpen]);
@@ -245,7 +248,7 @@ function NavBar(props) {
               >
                 Ver
               </Typography> */}
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="/c">
                 <img src="images/IMP_Logo.png" 
                 alt="Image Mark Pro" /></a>
             </Hidden>
@@ -278,7 +281,7 @@ function NavBar(props) {
                 <ListItemText
                   className={classes.username}
                   primary={
-                    <Typography color="textPrimary">Username</Typography>
+                    <Typography color="textPrimary">{currentUser.email}</Typography>
                   }
                 />
               )}
