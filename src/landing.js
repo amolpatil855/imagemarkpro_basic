@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link , Redirect} from 'react-router-dom';
 
 const PLANS = [
   {
@@ -46,7 +46,9 @@ const Plan = ({ heading, subheading, planType }) => {
             <span> Quis ipsum suspendisse ultrices</span>
           </div>
         </div>
-        <button className="buy py-2 my-4">
+        <button
+        //  onclick={this.buyNow(planType)}
+        className="buy py-2 my-4">
           <span className="mx-4 px-2"> Buy Now</span>
         </button>
       </div>
@@ -55,9 +57,33 @@ const Plan = ({ heading, subheading, planType }) => {
 };
 
 class LandingPage extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state= {
+      selectedPlan : null,
+      redirect : false
+    }
+
+  }
+
+
+  
+  buyNow = (type) =>{
+       this.setState({ selectedPlan : type , redirect : true});
+  }
+  
+  renderRedirect = () => {
+    if (this.state.redirect) {
+        return <Redirect to='/register' />
+    }
+}
+
   render() {
     return (
       <div>
+        {this.renderRedirect()}
         <div>
           <nav
             className="navbar navbar-expand-lg navbar-light sticky-top"
