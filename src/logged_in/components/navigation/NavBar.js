@@ -229,7 +229,7 @@ function NavBar(props) {
               </Box>
             </Hidden>
             <Hidden xsDown>
-              <Typography
+              {/* <Typography
                 variant="h4"
                 className={classes.brandText}
                 display="inline"
@@ -244,7 +244,10 @@ function NavBar(props) {
                 color="secondary"
               >
                 Ver
-              </Typography>
+              </Typography> */}
+              <a class="navbar-brand" href="/">
+                <img src="images/IMP_Logo.png" 
+                alt="Image Mark Pro" /></a>
             </Hidden>
           </Box>
           <Box

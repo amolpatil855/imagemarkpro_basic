@@ -7,10 +7,12 @@ import * as serviceWorker from "./serviceWorker";
 import Pace from "./shared/components/Pace";
 
 const LoggedInComponent = lazy(() => import("./logged_in/components/Main"));
-
 const LoggedOutComponent = lazy(() => import("./logged_out/components/Main"));
 
 const LandingPage = lazy(() => import("./landing"));
+const LoginPage = lazy(() => import("./login"));
+const RegisterPage = lazy(() => import("./register"));
+
 
 function App() {
   return (
@@ -22,14 +24,20 @@ function App() {
         <Suspense fallback={<Fragment />}>
           <Switch>
 
-           <Route path="/">
+           <Route exact path="/">
               <LandingPage />
             </Route>
-          
-            <Route path="/cc">
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/register">
+              <RegisterPage />
+            </Route>
+        
+             <Route exact path="/c">
               <LoggedInComponent />
             </Route>
-            <Route>
+            <Route >
               <LoggedOutComponent />
             </Route>
           </Switch>

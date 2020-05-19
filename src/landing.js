@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 const PLANS = [
   {
     heading: "FREE TRAIL",
@@ -106,14 +108,18 @@ class LandingPage extends Component {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link 
+                  to={"/login"} className="nav-link"
+                  >
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link register-cta" href="#">
+                  <Link to={"/register"} 
+                  className="nav-link register-cta" 
+                 >
                     Register
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -714,9 +720,11 @@ class LandingPage extends Component {
                 </div>
               </div>
               <div className="cta-div">
-                <a className="view_more text_grey" href="#allBlogs">
+                <Link 
+                to={"/blog"}
+                className="view_more text_grey" >
                   VIEW MORE
-                </a>
+                </Link>
               </div>
             </div>
           </div>

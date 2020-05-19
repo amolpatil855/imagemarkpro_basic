@@ -76,22 +76,10 @@ function NavBar(props) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="primary"
-            >
-              Wa
-            </Typography>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="secondary"
-            >
-              Ver
-            </Typography>
+  
+            <a class="navbar-brand"
+             href="/"><img src="images/IMP_Logo.png"
+             alt="Image Mark Pro" /></a>
           </div>
           <div>
             <Hidden mdUp>
