@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import StripeCheckoutButton from './shared/components/Stripe';
 
 class LandingPage extends Component {
 
     render() {
         return (
             <div>
+              <StripeCheckoutButton />
                   <div>
         <nav className="navbar navbar-expand-lg navbar-light sticky-top" id="ImpNav">
             <a className="navbar-brand" href="#">
