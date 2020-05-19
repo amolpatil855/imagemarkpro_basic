@@ -105,6 +105,7 @@ class LoginPage extends Component {
     users.push(user);
 
     localStorage.setItem('users',JSON.stringify(users));
+    localStorage.setItem('currentUser',JSON.stringify(user));
     this.setState({redirect:true},() => this.renderRedirect());
   };
 

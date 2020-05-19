@@ -104,7 +104,7 @@ class LoginPage extends Component {
 
             if(user.email === this.state.email){
                 if(user.password === this.state.password){
-                    localStorage.setItem("currentUser" , user );
+                    localStorage.setItem("currentUser" , JSON.stringify(user) );
                     this.setState({ redirect : true});
                 }
             }

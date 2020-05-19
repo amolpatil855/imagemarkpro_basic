@@ -134,6 +134,9 @@ function NavBar(props) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
 
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
   }, [setIsMobileOpen]);
@@ -278,7 +281,7 @@ function NavBar(props) {
                 <ListItemText
                   className={classes.username}
                   primary={
-                    <Typography color="textPrimary">Username</Typography>
+                    <Typography color="textPrimary">{currentUser.email}</Typography>
                   }
                 />
               )}
