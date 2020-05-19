@@ -524,6 +524,10 @@ a.imp_play_icon {
     margin-top:50px;
 }
 
+.selected-card{
+    opacity: 0.5 !important;
+}
+
 .subscription-card-heading{
     height:40px;
     background-color: #27a1d0;

@@ -2,8 +2,9 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
-const StripeCheckoutButton = ({price}) => {
-    const priceForStripe = 200 * 100;
+const StripeCheckoutButton = ({signUpUser}) => {
+    let plan = JSON.parse(localStorage.getItem('selectedPlan'));
+    const priceForStripe = plan?.price * 100;
     const publishableKey = process.env.REACT_APP_PUBLISHABLE_KEY
 
     const onToken = token => {
@@ -13,11 +14,13 @@ const StripeCheckoutButton = ({price}) => {
             data:{
                 amount:priceForStripe,
                 token,
-                plan_type: "GOLD Plan",
+                plan_type: plan?.heading,
+                currency:'USD'
             }
         })
         .then(response => {
             alert('Payment Successful');
+            signUpUser();
         })
         .catch(error => {
             console.log('Payment error :',JSON.parse(error));
@@ -27,17 +30,17 @@ const StripeCheckoutButton = ({price}) => {
 
     return(
         <StripeCheckout
-            label='Pay Now'
+            label='Proceed to Pay & Signup'
             name='Image MarkPro Ltd.'
             billingAddress
             shippingAddress
             image='https://sendeyo.com/up/d/f3eb2117da'
-            description='Selected Plan - GOLD'
-            amount={priceForStripe * 100}
+            description={`Selected Plan - ${plan?.heading}`}
+            amount={priceForStripe}
             panelLabel='Pay Now'
             token={onToken}
             stripeKey={publishableKey}
-            currency='inr'
+            currency='USD'
         />
     );
 

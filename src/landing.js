@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import {Link , Redirect} from 'react-router-dom';
-
+import {withRouter} from 'react-router';
 const PLANS = [
   {
     heading: "FREE TRAIL",
     subheading: "FREE",
     planType: "free",
+    price:0
   },
   {
     heading: "STANDARD",
     subheading: "15",
+    price:15
   },
   {
     heading: "PREMIUM",
     subheading: "30",
+    price:30
   },
 ];
-const Plan = ({ heading, subheading, planType }) => {
+const Plan = ({ heading, subheading, planType,onPressBuy ,selectedPlan}) => {
   return (
     <div className="col-sm-6 col-md-6 col-lg-3">
-      <div className="card_features subscription-card">
+      <div className={selectedPlan ? 'selected-card':'card_features subscription-card'}>
         <div className="subscription-card-heading">
           <span>{heading}</span>
         </div>
@@ -47,7 +50,7 @@ const Plan = ({ heading, subheading, planType }) => {
           </div>
         </div>
         <button
-        //  onclick={this.buyNow(planType)}
+          onClick={() => onPressBuy()}
         className="buy py-2 my-4">
           <span className="mx-4 px-2"> Buy Now</span>
         </button>
@@ -67,11 +70,11 @@ class LandingPage extends Component {
     }
 
   }
-
-
   
-  buyNow = (type) =>{
-       this.setState({ selectedPlan : type , redirect : true});
+  onBuyplan = (plan) =>{
+      this.setState({ selectedPlan : plan});
+      localStorage.setItem('selectedPlan',JSON.stringify(plan));
+      this.props.history.push('/register');
   }
   
   renderRedirect = () => {
@@ -559,6 +562,8 @@ class LandingPage extends Component {
                       heading={plan.heading}
                       subheading={plan.subheading}
                       planType={plan.planType}
+                      onPressBuy={() => this.onBuyplan(plan)}
+                      selectedPlan={this.state.selectedPlan}
                     />
                   );
                 })}
@@ -968,4 +973,4 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
