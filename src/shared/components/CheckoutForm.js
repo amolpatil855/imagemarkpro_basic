@@ -11,7 +11,7 @@ function CheckoutForm({props,history}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] =useState('');
-  const { email, firstName, lastName, password } = props;
+  const { email, firstName, lastName, password,type, newPlan } = props;
   let selectedPlan = { ...JSON.parse(localStorage.getItem("selectedPlan")) };
   const stripe = useStripe();
   const elements = useElements();
@@ -19,13 +19,16 @@ function CheckoutForm({props,history}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     //check if form is empty
-    if (firstName && lastName && email && password){
+    if(type === 'pay'){
+      if (firstName && lastName && email && password){
         setError(false);
     } else {
         setError(true);
         setErrorMessage("Please fill the required fields");
         return;
     }
+    }
+    
 
     if (!stripe || !elements) {
       // Stripe.js has not yet loaded.
@@ -37,7 +40,7 @@ function CheckoutForm({props,history}) {
       let response = await axios.post(
         "https://eternus-imagemarkpro.herokuapp.com/payment",
         {
-          amount: selectedPlan.price * 100,
+          amount: type==='pay' ? selectedPlan.price * 100 : newPlan.price * 100,
           currency: "usd",
         }
       );
@@ -82,7 +85,17 @@ function CheckoutForm({props,history}) {
           localStorage.setItem("users", JSON.stringify(users));
           localStorage.setItem("currentUser", JSON.stringify(user));
           setLoading(false);
-          history.push('/c');
+
+          //if plan updated, set in local storage
+          if(type==='upgrade'){
+            localStorage.setItem('selectedPlan',JSON.stringify(newPlan));
+            selectedPlan=newPlan;
+          }
+
+          
+            history.push('/c')
+        
+          
 
           //send email to the user
           await axios.post('https://eternus-imagemarkpro.herokuapp.com/subscribe',
