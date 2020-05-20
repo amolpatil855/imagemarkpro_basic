@@ -11,13 +11,18 @@ function Home(props) {
   }, [selectHome]);
   return (
     <Fragment>
-      <HeadSection />
+      {/* <HeadSection /> */}
 
+    
       <div>
-        Dashboadr 
+           <h1> THis is the Dashbord Component </h1>
       </div>
-      {/* <FeatureSection />
-      <PricingSection /> */}
+      <div>
+           <h1> THis is the Dashbord Component </h1>
+      </div>
+
+      {/* <FeatureSection /> */}
+      <PricingSection />
     </Fragment>
   );
 }

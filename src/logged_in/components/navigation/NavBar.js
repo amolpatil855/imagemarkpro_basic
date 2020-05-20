@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useCallback, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link  , Redirect} from "react-router-dom";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import {
@@ -127,15 +127,34 @@ const styles = theme => ({
   }
 });
 
+
+
+function logoutUser(){
+  console.log("logout me");
+  localStorage.setItem("currentUser", null);
+ // userLogoutHandler()
+}
+
+
 function NavBar(props) {
   const { selectedTab, messages, classes, width, openAddBalanceDialog } = props;
   // Will be use to make website more accessible by screen readers
   const links = useRef([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+  const [userLogout, setUserLogout] = useState(false);
+
 
 
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+
+  const userLogoutHandler = useCallback(() => {
+    setUserLogout(true);
+    localStorage.setItem("currentUser", null);
+
+  }, [setUserLogout]);
+
 
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
@@ -170,53 +189,54 @@ function NavBar(props) {
         mobile: <DashboardIcon className="text-white" />
       }
     },
-    // {
-    //   link: "/c/posts",
-    //   name: "Posts",
-    //   onClick: closeMobileDrawer,
-    //   icon: {
-    //     desktop: (
-    //       <ImageIcon
-    //         className={
-    //           selectedTab === "Posts" ? classes.textPrimary : "text-white"
-    //         }
-    //         fontSize="small"
-    //       />
-    //     ),
-    //     mobile: <ImageIcon className="text-white" />
-    //   }
-    // },
-    // {
-    //   link: "/c/subscription",
-    //   name: "Subscription",
-    //   onClick: closeMobileDrawer,
-    //   icon: {
-    //     desktop: (
-    //       <AccountBalanceIcon
-    //         className={
-    //           selectedTab === "Subscription"
-    //             ? classes.textPrimary
-    //             : "text-white"
-    //         }
-    //         fontSize="small"
-    //       />
-    //     ),
-    //     mobile: <AccountBalanceIcon className="text-white" />
-    //   }
-    // },
     {
-      link: "/",
-      name: "Logout",
+      link: "/c/posts",
+      name: "Posts",
+      onClick: closeMobileDrawer,
       icon: {
         desktop: (
-          <PowerSettingsNewIcon className="text-white" fontSize="small" />
+          <ImageIcon
+            className={
+              selectedTab === "Posts" ? classes.textPrimary : "text-white"
+            }
+            fontSize="small"
+          />
         ),
-        mobile: <PowerSettingsNewIcon className="text-white" />
+        mobile: <ImageIcon className="text-white" />
       }
-    }
+    },
+    {
+      link: "/c/subscription",
+      name: "Subscription",
+      onClick: closeMobileDrawer,
+      icon: {
+        desktop: (
+          <AccountBalanceIcon
+            className={
+              selectedTab === "Subscription"
+                ? classes.textPrimary
+                : "text-white"
+            }
+            fontSize="small"
+          />
+        ),
+        mobile: <AccountBalanceIcon className="text-white" />
+      }
+    },
+    // {
+    //   link: "/",
+    //   name: "Logout",
+    //   icon: {
+    //     desktop: (
+    //       <PowerSettingsNewIcon className="text-white" fontSize="small" />
+    //     ),
+    //     mobile: <PowerSettingsNewIcon className="text-white" />
+    //   }
+    // }
   ];
   return (
     <Fragment>
+      {userLogout  &&  <Redirect to='/' />}
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
           <Box display="flex" alignItems="center">
@@ -259,14 +279,14 @@ function NavBar(props) {
             alignItems="center"
             width="100%"
           >
-            {isWidthUp("sm", width) && (
+            {/* {isWidthUp("sm", width) && (
               <Box mr={3}>
                 <Balance
                   balance={2573}
                   openAddBalanceDialog={openAddBalanceDialog}
                 />
               </Box>
-            )}
+            )} */}
             {/* <MessagePopperButton messages={messages} /> */}
             <ListItem
               disableGutters
@@ -274,17 +294,26 @@ function NavBar(props) {
             >
               <Avatar
                 alt="profile picture"
-                src={profilePicture}
+                src={""}
                 className={classNames(classes.accountAvatar)}
               />
               {isWidthUp("sm", width) && (
                 <ListItemText
                   className={classes.username}
                   primary={
-                    <Typography color="textPrimary">{currentUser.email}</Typography>
+                    <Typography color="textPrimary">{currentUser?.email}</Typography>
                   }
                 />
               )}
+            </ListItem>
+            <ListItem
+              disableGutters
+              className={classNames(classes.iconListItem, classes.smBordered)}
+            >
+              <PowerSettingsNewIcon 
+              onClick={userLogoutHandler}
+              className="text-info" fontSize="bold" />
+            
             </ListItem>
           </Box>
           {/* <IconButton
