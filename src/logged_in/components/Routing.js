@@ -71,26 +71,9 @@ function Routing(props) {
     <div className={classes.wrapper}>
       <Switch>
 
-     
-
-        <Switch>
-          <Route path="/c/pricing">
-          <Pricing />
-       
-          </Route>
-          <Route path="/c">
-          <Profile />
-   
-    
-          </Route>
-          <Route path="/c/gallary">
-          <Gallary />
-          </Route>
-        </Switch>
-        
         <PropsRoute
           path="/c/posts"
-          component={Posts}
+          component={Gallary}
           EmojiTextArea={EmojiTextArea}
           ImageCropper={ImageCropper}
           Dropzone={Dropzone}
@@ -99,16 +82,17 @@ function Routing(props) {
           posts={posts}
           setPosts={setPosts}
           selectPosts={selectPosts}
-        />
-        <PropsRoute
-          path="/c/profile"
+        /> 
+          <PropsRoute
+         path="/c/profile"
           component={Profile}
-          // transactions={transactions}
-          // pushMessageToSnackbar={pushMessageToSnackbar}
-          // selectSubscription={selectSubscription}
-          // openAddBalanceDialog={openAddBalanceDialog}
+          transactions={transactions}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          selectSubscription={selectSubscription}
+          openAddBalanceDialog={openAddBalanceDialog}
         />
-        <PropsRoute
+       
+       <PropsRoute
           path="/c/pricing"
           component={Pricing}
           // transactions={transactions}
@@ -116,6 +100,7 @@ function Routing(props) {
           // selectSubscription={selectSubscription}
           // openAddBalanceDialog={openAddBalanceDialog}
         />
+       
         <PropsRoute
           path="/"
           component={Dashboard}
@@ -128,8 +113,7 @@ function Routing(props) {
           isAccountActivated={isAccountActivated}
           selectDashboard={selectDashboard}
         />
-
-       
+  
       </Switch>
     </div>
   );

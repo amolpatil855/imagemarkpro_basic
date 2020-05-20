@@ -337,9 +337,25 @@ function Main(props) {
       />
       <main className={classNames(classes.main)}>
      
-          <Pricing />        
-          <Profile />
-          <Gallary />
+
+      <Profile/>
+      <Gallary/>
+      
+     {/* <Switch>
+       <Route to="/">
+         <Profile/>
+
+       </Route>
+       <Route to="/c/pricing">
+         <Pricing/>
+
+       </Route>
+       <Route to="/c/gallary">
+         <Gallary/>
+
+       </Route>
+     </Switch> */}
+       
 
         {/* <Routing
           isAccountActivated={isAccountActivated}
