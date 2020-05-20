@@ -73,58 +73,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
-    description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
-    buttonText: 'Sign up for free',
+    title: 'BASIC',
+    price: '5',
+    description: ['Select Image',"Add Watermark","Share/Save Your Image"],
+    buttonText: 'Upgrade Plan',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
+    title: 'STANDARD',
     subheader: 'Most popular',
     price: '15',
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+    "All BASIC plan features",
+      "Select Video",
+     " Share/Save Your Video"
     ],
-    buttonText: 'Get started',
+    buttonText: 'Upgrade Plan',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
+    title: 'PREMIUM',
     price: '30',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+     " BASIC + STANDARD covered",
+      "Select Streaming Platform",
+      "Cutomize Your Video Screen"
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Upgrade Plan',
     buttonVariant: 'outlined',
   },
 ];
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: ['Cool stuff', 'Random feature', 'Team feature', 'Developer stuff', 'Another one'],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
+
 
 export default function Pricing() {
   const classes = useStyles();

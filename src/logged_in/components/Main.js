@@ -1,4 +1,6 @@
 import React, { memo, useCallback, useState, useEffect, Fragment } from "react";
+import { Switch , Route  } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core";
@@ -8,6 +10,10 @@ import ConsecutiveSnackbarMessages from "../../shared/components/ConsecutiveSnac
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
 import persons from "../dummy_data/persons";
 import LazyLoadAddBalanceDialog from "./subscription/LazyLoadAddBalanceDialog";
+
+import Profile from './profile/profile';
+import Pricing from './pricing/pricing';
+import Gallary from './gallary/gallary';
 
 const styles = (theme) => ({
   main: {
@@ -330,7 +336,20 @@ function Main(props) {
         getPushMessageFromChild={getPushMessageFromChild}
       />
       <main className={classNames(classes.main)}>
-        <Routing
+
+        <h2> Routing  </h2>
+
+     
+          <Pricing />
+       
+        
+          <Profile />
+   
+    
+        
+          <Gallary />
+
+        {/* <Routing
           isAccountActivated={isAccountActivated}
           ImageCropper={ImageCropper}
           EmojiTextArea={EmojiTextArea}
@@ -349,7 +368,7 @@ function Main(props) {
           openAddBalanceDialog={openAddBalanceDialog}
           setTargets={setTargets}
           setPosts={setPosts}
-        />
+        /> */}
       </main>
     </Fragment>
   );

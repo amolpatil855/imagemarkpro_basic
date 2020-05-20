@@ -41,7 +41,7 @@ function App() {
             </Route> */}
 
             <PrivateRoute exact path='/c' component={LoggedInComponent} />
-            <Route >
+            <Route>
               <LoggedOutComponent />
             </Route>
           </Switch>

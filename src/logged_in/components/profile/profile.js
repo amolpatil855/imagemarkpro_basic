@@ -34,7 +34,7 @@ class ProfilePage extends Component {
         return (
             <div>
                 <Typography variant="h6" gutterBottom>
-                    User Pofile address
+                    User Pofile 
       </Typography>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>

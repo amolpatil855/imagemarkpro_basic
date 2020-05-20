@@ -70,6 +70,24 @@ function Routing(props) {
   return (
     <div className={classes.wrapper}>
       <Switch>
+
+     
+
+        <Switch>
+          <Route path="/c/pricing">
+          <Pricing />
+       
+          </Route>
+          <Route path="/c">
+          <Profile />
+   
+    
+          </Route>
+          <Route path="/c/gallary">
+          <Gallary />
+          </Route>
+        </Switch>
+        
         <PropsRoute
           path="/c/posts"
           component={Posts}
