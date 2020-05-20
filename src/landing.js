@@ -3,23 +3,37 @@ import {Link , Redirect} from 'react-router-dom';
 import {withRouter} from 'react-router';
 const PLANS = [
   {
-    heading: "FREE TRAIL",
-    subheading: "FREE",
-    planType: "free",
-    price:0
+    heading: "BASIC",
+    subheading: "5",
+    price:5,
+    features:[
+      'Select Image',
+      'Add Watermark',
+      'Share/Save Your Image'
+    ]
   },
   {
     heading: "STANDARD",
     subheading: "15",
-    price:15
+    price:15,
+    features:[
+      'All BASIC plan features',
+      'Select Video',
+      'Share/Save Your Video'
+    ]
   },
   {
     heading: "PREMIUM",
     subheading: "30",
-    price:30
+    price:30,
+    features:[
+      'BASIC + STANDARD covered',
+      'Select Streaming Platform',
+      'Cutomize Your Video Screen'
+    ]
   },
 ];
-const Plan = ({ heading, subheading, planType,onPressBuy ,selectedPlan}) => {
+const Plan = ({ features,heading, subheading, planType,onPressBuy ,selectedPlan}) => {
   return (
     <div className="col-sm-6 col-md-6 col-lg-3">
       <div className={selectedPlan ? 'selected-card':'card_features subscription-card'}>
@@ -36,18 +50,12 @@ const Plan = ({ heading, subheading, planType,onPressBuy ,selectedPlan}) => {
         }
         <hr className="m-3" />
         <div className="features">
-          <div className="feature-container">
+          {features.map(feature => {
+            return <div className="feature-container">
             <img src="icons/back.png" className="back-icon" />
-            <span> Quis ipsum suspendisse ultrices</span>
+            <span>{feature}</span>
           </div>
-          <div className="feature-container">
-            <img src="icons/back.png" className="back-icon" />
-            <span> Quis ipsum suspendisse ultrices</span>
-          </div>
-          <div className="feature-container">
-            <img src="icons/back.png" className="back-icon" />
-            <span> Quis ipsum suspendisse ultrices</span>
-          </div>
+          })}
         </div>
         <button
           onClick={() => onPressBuy()}
@@ -562,6 +570,7 @@ class LandingPage extends Component {
                       heading={plan.heading}
                       subheading={plan.subheading}
                       planType={plan.planType}
+                      features={plan.features}
                       onPressBuy={() => this.onBuyplan(plan)}
                       selectedPlan={this.state.selectedPlan}
                     />
