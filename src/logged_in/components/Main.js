@@ -1,6 +1,4 @@
 import React, { memo, useCallback, useState, useEffect, Fragment } from "react";
-import { Switch , Route  } from "react-router-dom";
-
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core";
@@ -10,10 +8,6 @@ import ConsecutiveSnackbarMessages from "../../shared/components/ConsecutiveSnac
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
 import persons from "../dummy_data/persons";
 import LazyLoadAddBalanceDialog from "./subscription/LazyLoadAddBalanceDialog";
-
-import Profile from './profile/profile';
-import Pricing from './pricing/pricing';
-import Gallary from './gallary/gallary';
 
 const styles = (theme) => ({
   main: {
@@ -237,7 +231,7 @@ function Main(props) {
 
   const selectDashboard = useCallback(() => {
     smoothScrollTop();
-    document.title = "ImagemarkPro - Dashboard";
+    document.title = "WaVer - Dashboard";
     setSelectedTab("Dashboard");
     if (!hasFetchedCardChart) {
       setHasFetchedCardChart(true);
@@ -254,7 +248,7 @@ function Main(props) {
 
   const selectPosts = useCallback(() => {
     smoothScrollTop();
-    document.title = "ImagemarkPro - Posts";
+    document.title = "WaVer - Posts";
     setSelectedTab("Posts");
     if (!hasFetchedEmojiTextArea) {
       setHasFetchedEmojiTextArea(true);
@@ -298,7 +292,7 @@ function Main(props) {
 
   const selectSubscription = useCallback(() => {
     smoothScrollTop();
-    document.title = "ImagemarkPro - Subscription";
+    document.title = "WaVer - Subscription";
     setSelectedTab("Subscription");
   }, [setSelectedTab]);
 
@@ -336,28 +330,7 @@ function Main(props) {
         getPushMessageFromChild={getPushMessageFromChild}
       />
       <main className={classNames(classes.main)}>
-     
-
-      <Profile/>
-      <Gallary/>
-      
-     {/* <Switch>
-       <Route to="/">
-         <Profile/>
-
-       </Route>
-       <Route to="/c/pricing">
-         <Pricing/>
-
-       </Route>
-       <Route to="/c/gallary">
-         <Gallary/>
-
-       </Route>
-     </Switch> */}
-       
-
-        {/* <Routing
+        <Routing
           isAccountActivated={isAccountActivated}
           ImageCropper={ImageCropper}
           EmojiTextArea={EmojiTextArea}
@@ -376,7 +349,7 @@ function Main(props) {
           openAddBalanceDialog={openAddBalanceDialog}
           setTargets={setTargets}
           setPosts={setPosts}
-        /> */}
+        />
       </main>
     </Fragment>
   );

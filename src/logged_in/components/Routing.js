@@ -1,14 +1,11 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import { Switch , Route  } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
 import Dashboard from "./dashboard/Dashboard";
 import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
-import Profile from './profile/profile';
-import Pricing from './pricing/pricing';
-import Gallary from './gallary/gallary';
 
 const styles = (theme) => ({
   wrapper: {
@@ -70,10 +67,9 @@ function Routing(props) {
   return (
     <div className={classes.wrapper}>
       <Switch>
-
         <PropsRoute
           path="/c/posts"
-          component={Gallary}
+          component={Posts}
           EmojiTextArea={EmojiTextArea}
           ImageCropper={ImageCropper}
           Dropzone={Dropzone}
@@ -82,27 +78,17 @@ function Routing(props) {
           posts={posts}
           setPosts={setPosts}
           selectPosts={selectPosts}
-        /> 
-          <PropsRoute
-         path="/c/profile"
-          component={Profile}
+        />
+        <PropsRoute
+          path="/c/subscription"
+          component={Subscription}
           transactions={transactions}
           pushMessageToSnackbar={pushMessageToSnackbar}
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
         />
-       
-       <PropsRoute
-          path="/c/pricing"
-          component={Pricing}
-          // transactions={transactions}
-          // pushMessageToSnackbar={pushMessageToSnackbar}
-          // selectSubscription={selectSubscription}
-          // openAddBalanceDialog={openAddBalanceDialog}
-        />
-       
         <PropsRoute
-          path="/"
+          path=""
           component={Dashboard}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
@@ -113,7 +99,6 @@ function Routing(props) {
           isAccountActivated={isAccountActivated}
           selectDashboard={selectDashboard}
         />
-  
       </Switch>
     </div>
   );
