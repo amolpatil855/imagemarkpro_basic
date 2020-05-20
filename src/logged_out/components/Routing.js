@@ -6,6 +6,7 @@ import Home from "./home/Home";
 import Blog from "./blog/Blog";
 import BlogPost from "./blog/BlogPost";
 
+
 function Routing(props) {
   const { blogPosts, selectBlog, selectHome } = props;
   return (
@@ -31,7 +32,7 @@ function Routing(props) {
         blogPosts={blogPosts}
       />
       )
-      <PropsRoute path="/" component={Home} selectHome={selectHome} />)
+      {/* <PropsRoute path="/" component={Home} selectHome={selectHome} />) */}
     </Switch>
   );
 }

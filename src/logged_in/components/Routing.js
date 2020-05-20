@@ -1,11 +1,13 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import { Switch } from "react-router-dom";
+import { Switch , Route  } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
 import Dashboard from "./dashboard/Dashboard";
 import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
+import Profile from './profile/profile';
+import Pricing from './pricing/pricing';
 
 const styles = (theme) => ({
   wrapper: {
@@ -79,16 +81,24 @@ function Routing(props) {
           setPosts={setPosts}
           selectPosts={selectPosts}
         />
-        {/* <PropsRoute
-          path="/c/subscription"
-          component={Subscription}
-          transactions={transactions}
-          pushMessageToSnackbar={pushMessageToSnackbar}
-          selectSubscription={selectSubscription}
-          openAddBalanceDialog={openAddBalanceDialog}
-        /> */}
         <PropsRoute
-          path=""
+          path="/c/profile"
+          component={Profile}
+          // transactions={transactions}
+          // pushMessageToSnackbar={pushMessageToSnackbar}
+          // selectSubscription={selectSubscription}
+          // openAddBalanceDialog={openAddBalanceDialog}
+        />
+        <PropsRoute
+          path="/c/pricing"
+          component={Pricing}
+          // transactions={transactions}
+          // pushMessageToSnackbar={pushMessageToSnackbar}
+          // selectSubscription={selectSubscription}
+          // openAddBalanceDialog={openAddBalanceDialog}
+        />
+        <PropsRoute
+          path="/"
           component={Dashboard}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
@@ -99,6 +109,8 @@ function Routing(props) {
           isAccountActivated={isAccountActivated}
           selectDashboard={selectDashboard}
         />
+
+       
       </Switch>
     </div>
   );

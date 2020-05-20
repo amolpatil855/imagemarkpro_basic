@@ -155,7 +155,7 @@ class LoginPage extends Component {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <div>
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="/c">
                 <img src="images/IMP_Logo.png" alt="Image Mark Pro" />
               </a>
             </div>

@@ -131,7 +131,7 @@ const styles = theme => ({
 
 function logoutUser(){
   console.log("logout me");
-  localStorage.setItem("currentUser", null);
+  localStorage.removeItem("currentUser");
  // userLogoutHandler()
 }
 
@@ -221,8 +221,26 @@ function NavBar(props) {
           />
         ),
         mobile: <AccountBalanceIcon className="text-white" />
-      }
-    },
+      },
+     },
+     {
+      link: "/c/profile",
+      name: "Profile",
+      onClick: closeMobileDrawer,
+      icon: {
+        desktop: (
+          <AccountBalanceIcon
+            className={
+              selectedTab === "profile"
+                ? classes.textPrimary
+                : "text-white"
+            }
+            fontSize="small"
+          />
+        ),
+        mobile: <AccountBalanceIcon className="text-white" />
+      },
+     },
     // {
     //   link: "/",
     //   name: "Logout",
@@ -237,6 +255,7 @@ function NavBar(props) {
   return (
     <Fragment>
       {userLogout  &&  <Redirect to='/' />}
+      {/* {!localStorage.getItem("currentUser") && <Redirect to="/" />} */}
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
           <Box display="flex" alignItems="center">
