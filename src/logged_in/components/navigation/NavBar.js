@@ -2,6 +2,8 @@ import React, { Fragment, useRef, useCallback, useState } from "react";
 import { Link  , Redirect} from "react-router-dom";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Icon from '@material-ui/core/Icon';
+
 import {
   AppBar,
   Toolbar,
@@ -23,6 +25,9 @@ import {
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import ImageIcon from "@material-ui/icons/Image";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import MenuIcon from "@material-ui/icons/Menu";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
@@ -163,22 +168,22 @@ function NavBar(props) {
   }, [setIsSideDrawerOpen]);
 
   const menuItems = [
-    {
-      link: "/c/dashboard",
-      name: "Dashboard",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <DashboardIcon
-            className={
-              selectedTab === "Dashboard" ? classes.textPrimary : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <DashboardIcon className="text-white" />
-      }
-    },
+    // {
+    //   link: "/c/dashboard",
+    //   name: "Dashboard",
+    //   onClick: closeMobileDrawer,
+    //   icon: {
+    //     desktop: (
+    //       <DashboardIcon
+    //         className={
+    //           selectedTab === "Dashboard" ? classes.textPrimary : "text-white"
+    //         }
+    //         fontSize="small"
+    //       />
+    //     ),
+    //     mobile: <DashboardIcon className="text-white" />
+    //   }
+    // },
     {
       link: "/c/posts",
       name: "Posts",
@@ -195,40 +200,69 @@ function NavBar(props) {
         mobile: <ImageIcon className="text-white" />
       }
     },
-    {
-      link: "/c/subscription",
-      name: "Subscription",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <AccountBalanceIcon
-            className={
-              selectedTab === "Subscription"
-                ? classes.textPrimary
-                : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <AccountBalanceIcon className="text-white" />
-      },
-     },
+    // {
+    //   link: "/c/subscription",
+    //   name: "Subscription",
+    //   onClick: closeMobileDrawer,
+    //   icon: {
+    //     desktop: (
+    //       <AccountBalanceIcon
+    //         className={
+    //           selectedTab === "Subscription"
+    //             ? classes.textPrimary
+    //             : "text-white"
+    //         }
+    //         fontSize="small"
+    //       />
+    //     ),
+    //     mobile: <AccountBalanceIcon className="text-white" />
+    //   },
+    //  },
      {
       link: "/c/profile",
       name: "Profile",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
-          <AccountBalanceIcon
+          <AccountCircleIcon className="text-white"  />
+        ),
+        mobile: <AccountCircleIcon  className="text-white" />
+      },
+     },
+     {
+      link: "/c/pricing",
+      name: "Pricing",
+      onClick: closeMobileDrawer,
+      icon: {
+        desktop: (
+          <MonetizationOnIcon
             className={
-              selectedTab === "profile"
+              selectedTab === "pricing"
                 ? classes.textPrimary
                 : "text-white"
             }
             fontSize="small"
           />
         ),
-        mobile: <AccountBalanceIcon className="text-white" />
+        mobile: <MonetizationOnIcon className="text-white" />
+      },
+     },
+     {
+      link: "/c/gallery",
+      name: "Gallery",
+      onClick: closeMobileDrawer,
+      icon: {
+        desktop: (
+          <PhotoLibraryIcon
+            className={
+              selectedTab === "gallery"
+                ? classes.textPrimary
+                : "text-white"
+            }
+            fontSize="small"
+          />
+        ),
+        mobile: <PhotoLibraryIcon className="text-white" />
       },
      },
     // {

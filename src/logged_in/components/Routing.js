@@ -7,6 +7,12 @@ import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
 
+
+
+import Pricing from './pricing/pricing';
+import Profile from './profile/profile';
+import Gallery from './gallery/gallery';
+
 const styles = (theme) => ({
   wrapper: {
     margin: theme.spacing(1),
@@ -67,18 +73,7 @@ function Routing(props) {
   return (
     <div className={classes.wrapper}>
       <Switch>
-        <PropsRoute
-          path="/c/posts"
-          component={Posts}
-          EmojiTextArea={EmojiTextArea}
-          ImageCropper={ImageCropper}
-          Dropzone={Dropzone}
-          DateTimePicker={DateTimePicker}
-          pushMessageToSnackbar={pushMessageToSnackbar}
-          posts={posts}
-          setPosts={setPosts}
-          selectPosts={selectPosts}
-        />
+       
         <PropsRoute
           path="/c/subscription"
           component={Subscription}
@@ -87,7 +82,34 @@ function Routing(props) {
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
         />
+
+<PropsRoute
+          path="/c/profile"
+          component={Profile}
+          transactions={transactions}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          selectSubscription={selectSubscription}
+          openAddBalanceDialog={openAddBalanceDialog}
+        />
+<PropsRoute
+          path="/c/pricing"
+          component={Pricing}
+          transactions={transactions}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          selectSubscription={selectSubscription}
+          openAddBalanceDialog={openAddBalanceDialog}
+        />
         <PropsRoute
+          path="/c/gallery"
+          component={Gallery}
+          transactions={transactions}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          selectSubscription={selectSubscription}
+          openAddBalanceDialog={openAddBalanceDialog}
+        />
+
+
+        {/* <PropsRoute
           path=""
           component={Dashboard}
           toggleAccountActivation={toggleAccountActivation}
@@ -98,6 +120,19 @@ function Routing(props) {
           setTargets={setTargets}
           isAccountActivated={isAccountActivated}
           selectDashboard={selectDashboard}
+        /> */}
+
+<PropsRoute
+          path=""
+          component={Posts}
+          EmojiTextArea={EmojiTextArea}
+          ImageCropper={ImageCropper}
+          Dropzone={Dropzone}
+          DateTimePicker={DateTimePicker}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          posts={posts}
+          setPosts={setPosts}
+          selectPosts={selectPosts}
         />
       </Switch>
     </div>
