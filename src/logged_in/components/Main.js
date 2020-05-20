@@ -336,17 +336,9 @@ function Main(props) {
         getPushMessageFromChild={getPushMessageFromChild}
       />
       <main className={classNames(classes.main)}>
-
-        <h2> Routing  </h2>
-
      
-          <Pricing />
-       
-        
+          <Pricing />        
           <Profile />
-   
-    
-        
           <Gallary />
 
         {/* <Routing

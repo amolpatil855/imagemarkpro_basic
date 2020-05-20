@@ -128,14 +128,6 @@ const styles = theme => ({
 });
 
 
-
-function logoutUser(){
-  console.log("logout me");
-  localStorage.removeItem("currentUser");
- // userLogoutHandler()
-}
-
-
 function NavBar(props) {
   const { selectedTab, messages, classes, width, openAddBalanceDialog } = props;
   // Will be use to make website more accessible by screen readers
@@ -143,8 +135,6 @@ function NavBar(props) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
   const [userLogout, setUserLogout] = useState(false);
-
-
 
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
