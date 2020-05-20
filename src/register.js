@@ -30,7 +30,7 @@ import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "./shared/components/NavigationDrawer";
 
-import StripeCheckoutButton from "./shared/components/Stripe";
+import StripeCheckout from "./shared/components/Stripe";
 
 const styles = (theme) => ({
   appBar: {
@@ -89,31 +89,6 @@ class LoginPage extends Component {
     this.setState({ selectedPlan });
   }
 
-  signUpUser = () => {
-    console.log("signup by ", this.state);
-    let users = JSON.parse(localStorage.getItem("users"));
-    users = users ? [...users] : [];
-    console.log("users",users)
-    let {firstName, lastName, email, password} = this.state;
-    let user = {
-        firstName,
-        lastName,
-        email,
-        password
-    }
-
-    users.push(user);
-
-    localStorage.setItem('users',JSON.stringify(users));
-    localStorage.setItem('currentUser',JSON.stringify(user));
-    this.setState({redirect:true},() => this.renderRedirect());
-  };
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to="/c" />;
-    }
-  };
 
   render() {
     const menuItems = [
@@ -151,7 +126,6 @@ class LoginPage extends Component {
 
     return (
       <div className={classes.root}>
-        {this.renderRedirect()}
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <div>
@@ -285,7 +259,6 @@ class LoginPage extends Component {
                       autoComplete="current-password"
                     />
                   </Grid>
-
                   <Grid item xs={12}>
                     <FormControlLabel
                       control={
@@ -294,35 +267,36 @@ class LoginPage extends Component {
                       label="I want to receive inspiration, marketing promotions and updates via email."
                     />
                   </Grid>
-                </Grid>
-                
-
-                <Grid container justify="flex-end">
+                  <StripeCheckout
+                    plan={this.state.selectedPlan}
+                    email={this.state.email}
+                    firstName={this.state.firstName}
+                    lastName={this.state.lastName}
+                    password={this.state.password}
+                  />
+                   <Grid container justify="flex-end">
                   <Grid item>
                     <Link to="/login" variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>
                 </Grid>
+                </Grid>
               </form>
               <div className={classes.form}>
-              <div className="d-flex alert alert-info">
+                <div className="d-flex alert alert-info">
                   <div>selected Plan - {this.state.selectedPlan?.heading}</div>
                 </div>
-                
-              <div className="alert alert-info">
+
+                <div className="alert alert-info">
                   {" "}
                   <div>
-                      <div>Test Credit Card - 4242 4242 4242 4242</div>
-                      <div>CVC - Any 3 digits</div>
-                      <div>Expiry - Any future date</div>
+                    <div>Test Credit Card - 4242 4242 4242 4242</div>
+                    <div>CVC - Any 3 digits</div>
+                    <div>Expiry - Any future date</div>
                   </div>
                 </div>
-              <div className="center">
-                  {" "}
-                  <StripeCheckoutButton plan={this.state.selectedPlan} signUpUser={() => this.signUpUser()}/>
-                </div>
-                </div>
+              </div>
             </div>
           </Container>
         </div>

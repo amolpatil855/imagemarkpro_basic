@@ -1,49 +1,20 @@
 import React from 'react';
-import StripeCheckout from 'react-stripe-checkout';
-import axios from 'axios';
+import ReactDOM from 'react-dom';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
-const StripeCheckoutButton = ({signUpUser}) => {
-    let plan = JSON.parse(localStorage.getItem('selectedPlan'));
-    const priceForStripe = plan?.price * 100;
-    const publishableKey = process.env.REACT_APP_PUBLISHABLE_KEY
+import CheckoutForm from './CheckoutForm';
 
-    const onToken = token => {
-        axios({
-            url:'https://eternus-imagemarkpro.herokuapp.com/payment',
-            method:'post',
-            data:{
-                amount:priceForStripe,
-                token,
-                plan_type: plan?.heading,
-                currency:'USD'
-            }
-        })
-        .then(response => {
-            alert('Payment Successful');
-            signUpUser();
-        })
-        .catch(error => {
-            console.log('Payment error :',JSON.parse(error));
-            alert('There was an issue with your payment.Please make sure you use the provided credit card');
-        });
-    }
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
-    return(
-        <StripeCheckout
-            label='Proceed to Pay & Signup'
-            name='Image MarkPro Ltd.'
-            billingAddress
-            shippingAddress
-            image='https://sendeyo.com/up/d/f3eb2117da'
-            description={`Selected Plan - ${plan?.heading}`}
-            amount={priceForStripe}
-            panelLabel='Pay Now'
-            token={onToken}
-            stripeKey={publishableKey}
-            currency='USD'
-        />
-    );
+function StripeCheckout(props) {
+  return (
+    <Elements stripe={stripePromise}>
+      <CheckoutForm props={props}/>
+    </Elements>
+  );
+};
 
-}
-
-export default StripeCheckoutButton;
+export default StripeCheckout;
