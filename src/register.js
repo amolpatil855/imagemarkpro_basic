@@ -273,6 +273,7 @@ class LoginPage extends Component {
                     firstName={this.state.firstName}
                     lastName={this.state.lastName}
                     password={this.state.password}
+                    type='pay'
                   />
                    <Grid container justify="flex-end">
                   <Grid item>
