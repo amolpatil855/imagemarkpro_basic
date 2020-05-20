@@ -8,6 +8,7 @@ import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
 import Profile from './profile/profile';
 import Pricing from './pricing/pricing';
+import Gallary from './gallary/gallary';
 
 const styles = (theme) => ({
   wrapper: {
