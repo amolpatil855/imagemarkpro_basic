@@ -60,11 +60,11 @@ function NavBar(props) {
       name: "Blog",
       icon: <BookIcon className="text-white" />
     },
-    {
-      link: "/register",
-      name: "Register",
-      icon: <BookIcon className="text-white" />
-  },
+  //   {
+  //     link: "/register",
+  //     name: "Register",
+  //     icon: <BookIcon className="text-white" />
+  // },
   {
       name: "Login",
       link: "/login",

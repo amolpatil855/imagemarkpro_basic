@@ -132,16 +132,16 @@ class LoginPage extends Component {
                 name: "Blog",
                 icon: <BookIcon className="text-white" />
             },
-            {
-                link: "/register",
-                name: "Register",
-                icon: <BookIcon className="text-white" />
-            },
-            {
-                name: "Login",
-                link: "/login",
-                icon: <LockOpenIcon className="text-white" />
-            }
+            // {
+            //     link: "/register",
+            //     name: "Register",
+            //     icon: <BookIcon className="text-white" />
+            // },
+            // {
+            //     name: "Login",
+            //     link: "/login",
+            //     icon: <LockOpenIcon className="text-white" />
+            // }
         ];
 
         const {
@@ -271,7 +271,7 @@ class LoginPage extends Component {
                                 >
                                     Sign In
                               </Button>
-                                <Grid container>
+                                {/* <Grid container>
                                     <Grid item xs>
                                         <Link href="#" variant="body2">
                                             Forgot password?
@@ -282,7 +282,7 @@ class LoginPage extends Component {
                                             {"Don't have an account? Sign Up"}
                                         </Link>
                                     </Grid>
-                                </Grid>
+                                </Grid> */}
                             </form>
                         </div>
                         <Box mt={8}>

@@ -151,13 +151,13 @@ class LandingPage extends Component {
                     Login
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link to={"/register"} 
                   className="nav-link register-cta" 
                  >
                     Register
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </nav>
