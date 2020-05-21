@@ -12,19 +12,10 @@ import image10 from "./images/image10.jpg";
 export default [
   {
     profilePicUrl: image1,
-    name: "Markus"
+    name: "Sample 1"
   },
   {
     profilePicUrl: image2,
-    name: "David"
-  },
-  {
-    profilePicUrl: image3,
-    name: "Arold"
-  },
-  {
-    profilePicUrl: image4,
-    name: "Joanic"
+    name: "Sample 2"
   }
- 
 ];
