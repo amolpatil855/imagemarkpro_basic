@@ -69,8 +69,8 @@ function BlogPost(props) {
                         <Grid item key={index}>
                           <ShareButton
                             type={type}
-                            title="React SaaS Template"
-                            description="I found an awesome template for an webapp using React!"
+                            title="Imagemark Pro"
+                            description="Post from imagemark pro!"
                             disableElevation
                             variant="contained"
                             className="text-white"
