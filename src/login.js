@@ -91,23 +91,23 @@ class LoginPage extends Component {
 
 
     signinUser = () => {
-     
        let user =  {
         email : this.state.email,
         password :  this.state.password
        }
 
        let users = JSON.parse(localStorage.getItem("users"));
-     
-        users && users.map( (user, index) =>{
 
-            if(user?.email === this.state.email){
-                if(user?.password === this.state.password){
-                    localStorage.setItem("currentUser" , JSON.stringify(user) );
-                    this.setState({ redirect : true});
-                }
-            }
-        })
+       let userPresent = users?.filter(user => {
+           return user?.email === this.state.email && user?.password === this.state.password;
+       })
+
+       if(userPresent.length > 0){
+        localStorage.setItem("currentUser" , JSON.stringify(userPresent[0]) );
+        this.setState({ redirect : true});
+       }else {
+           NotificationManager.error('Please check your credentials', 'Login failed');
+       }        
  
     }
 
