@@ -206,6 +206,7 @@ class LandingPage extends Component {
                     className="Imp_app"
                     src="images/mobile.png"
                     alt="IMP Application ScreenShot"
+                    style={{width:"200px",height:"418px"}}
                   />
                 </div>
               </div>
