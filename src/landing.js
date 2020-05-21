@@ -672,7 +672,7 @@ class LandingPage extends Component {
                   <div className="blog-card">
                     <img
                       className="blog-image"
-                      src="https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg"
+                      src="https://imagemarkpro.com/wp-content/themes/maintheme/images/phone1.png"
                       alt="IMP How to create a flimgrian effect"
                     />
                     <div className="blog-div">
