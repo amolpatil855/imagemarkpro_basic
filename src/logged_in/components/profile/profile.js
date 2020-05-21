@@ -40,10 +40,21 @@ class ProfilePage extends Component {
         })
     }
     updateProfile = () => {
-        console.log("profile is ", this.state);
+        let users = [...JSON.parse(localStorage.getItem('users'))];
+        //localStorage.setItem("currentUser" , JSON.stringify(this.state));
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        
+        let loggedInUser = users.find(user => user.email === currentUser.email);
+        let loggedInUserIndex = users.findIndex(user => user.email === currentUser.email);
+        loggedInUser = {...loggedInUser,...this.state};
 
-        localStorage.setItem("currentUser" , JSON.stringify(this.state));
-        alert("Your Profile Updated")
+        //update users array
+        users[loggedInUserIndex] = loggedInUser;
+
+        ///set in local storage
+        localStorage.setItem('users',JSON.stringify(users));
+       
+        alert("Your Profile is updated successfully");
 
     }
 

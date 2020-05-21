@@ -100,10 +100,10 @@ class LoginPage extends Component {
 
        let users = JSON.parse(localStorage.getItem("users"));
      
-        users.map( (user, index) =>{
+        users && users.map( (user, index) =>{
 
-            if(user.email === this.state.email){
-                if(user.password === this.state.password){
+            if(user?.email === this.state.email){
+                if(user?.password === this.state.password){
                     localStorage.setItem("currentUser" , JSON.stringify(user) );
                     this.setState({ redirect : true});
                 }
