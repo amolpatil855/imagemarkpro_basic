@@ -97,14 +97,14 @@ function Routing(props) {
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
         />
-        <PropsRoute
+        {/* <PropsRoute
           path="/c/gallery"
           component={Gallery}
           transactions={transactions}
           pushMessageToSnackbar={pushMessageToSnackbar}
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
-        />
+        /> */}
 
 
         {/* <PropsRoute

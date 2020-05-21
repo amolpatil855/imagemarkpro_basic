@@ -247,24 +247,24 @@ function NavBar(props) {
         mobile: <MonetizationOnIcon className="text-white" />
       },
      },
-     {
-      link: "/c/gallery",
-      name: "Gallery",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <PhotoLibraryIcon
-            className={
-              selectedTab === "gallery"
-                ? classes.textPrimary
-                : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <PhotoLibraryIcon className="text-white" />
-      },
-     },
+    //  {
+    //   link: "/c/gallery",
+    //   name: "Gallery",
+    //   onClick: closeMobileDrawer,
+    //   icon: {
+    //     desktop: (
+    //       <PhotoLibraryIcon
+    //         className={
+    //           selectedTab === "gallery"
+    //             ? classes.textPrimary
+    //             : "text-white"
+    //         }
+    //         fontSize="small"
+    //       />
+    //     ),
+    //     mobile: <PhotoLibraryIcon className="text-white" />
+    //   },
+    // },
     // {
     //   link: "/",
     //   name: "Logout",
