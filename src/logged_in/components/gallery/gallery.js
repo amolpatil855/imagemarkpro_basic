@@ -63,7 +63,7 @@ const cards = [{
   id : 1 ,
   imageUrl : "https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg",
   heading : "IMAGE EDITING",
-  content : "We are here to help"
+  content : "Photo editing is tough: it requires time, patience, and technical chops, not to mention complicated, expensive software. With Imagemark pro, you can turn a photo you like into a photo you love – no technical savvy or pricey software required"
 ,title : "image1"
 }, {
   id : 2 ,
