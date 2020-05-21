@@ -23,8 +23,28 @@ class ProfilePage extends Component {
         }
     }
 
+
+    componentDidMount = () =>{
+        let user =  JSON.parse(localStorage.getItem('currentUser'));
+        console.log(user);
+        this.setState({
+            firstName : user.firstName,
+            lastName : user.lastName,
+            email : user.email,
+            address1: user.address1,
+            address2: user.address2,
+            city: user.city,
+            state: user.state,
+            country: user.country,
+            zip: user.zip
+        })
+    }
     updateProfile = () => {
         console.log("profile is ", this.state);
+
+        localStorage.setItem("currentUser" , JSON.stringify(this.state));
+        alert("Your Profile Updated")
+
     }
 
     inputChangeHandler = (name, value) => {

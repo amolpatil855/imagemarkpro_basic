@@ -169,9 +169,9 @@ export default function Pricing() {
                     <Typography component="h2" variant="h3" color="textPrimary">
                       ${tier.price}
                     </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /mo
-                    </Typography>
+                  
+                  { tier.price === 30 && <Typography variant="h6" color="textSecondary">  /mo </Typography> }
+                  
                   </div>
                   <ul>
                     {tier.features.map((line) => (

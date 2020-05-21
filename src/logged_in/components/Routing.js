@@ -7,8 +7,6 @@ import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
 
-
-
 import Pricing from './pricing/pricing';
 import Profile from './profile/profile';
 import Gallery from './gallery/gallery';
