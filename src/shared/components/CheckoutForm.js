@@ -125,7 +125,7 @@ function CheckoutForm({props,history}) {
         className="my-2"
         onClick={(e) => handleSubmit(e)}
       >
-        Pay with Stripe{" "}
+        {type==='pay' ? 'SUBSCRIBE' : 'UPGRADE NOW'}
         {loading ? <CircularProgress className="mx-2" size={20} /> : ""}
       </Button>
       {error ? <div className="text-danger center">{errorMessage}</div> : ""}

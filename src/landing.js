@@ -1,65 +1,75 @@
-import React, { Component } from 'react';
-import {Link , Redirect} from 'react-router-dom';
-import {withRouter} from 'react-router';
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { withRouter } from "react-router";
 const PLANS = [
   {
     heading: "BASIC",
     subheading: "5",
-    price:5,
-    features:[
-      'Select Image',
-      'Add Watermark',
-      'Share/Save Your Image'
-    ]
+    price: 5,
+    features: ["Select Image", "Add Watermark", "Share/Save Your Image"],
   },
   {
     heading: "STANDARD",
     subheading: "15",
-    price:15,
-    features:[
-      'All BASIC plan features',
-      'Select Video',
-      'Share/Save Your Video'
-    ]
+    price: 15,
+    features: [
+      "All BASIC plan features",
+      "Select Video",
+      "Share/Save Your Video",
+    ],
   },
   {
     heading: "PREMIUM",
     subheading: "30",
-    price:30,
-    features:[
-      'BASIC + STANDARD covered',
-      'Select Streaming Platform',
-      'Cutomize Your Video Screen'
-    ]
+    price: 30,
+    features: [
+      "BASIC + STANDARD covered",
+      "Select Streaming Platform",
+      "Cutomize Your Video Screen",
+    ],
   },
 ];
-const Plan = ({ price,features,heading, subheading, planType,onPressBuy ,selectedPlan}) => {
+const Plan = ({
+  price,
+  features,
+  heading,
+  subheading,
+  planType,
+  onPressBuy,
+  selectedPlan,
+}) => {
   return (
     <div className="col-sm-6 col-md-6 col-lg-3">
-      <div className={selectedPlan ? 'selected-card':'card_features subscription-card'}>
+      <div
+        className={
+          selectedPlan ? "selected-card" : "card_features subscription-card"
+        }
+      >
         <div className="subscription-card-heading">
           <span>{heading}</span>
         </div>
-        {planType === 'free' ? <div className="subscription-card-price">
-          <span className="price">{subheading}</span>
-        </div>:
-        <div className="subscription-card-price">
-          $<span className="price">{subheading}</span>
-          {price === 30 ? <span className="text">/month</span> :""}
-        </div>
-        }
+        {planType === "free" ? (
+          <div className="subscription-card-price">
+            <span className="price">{subheading}</span>
+          </div>
+        ) : (
+          <div className="subscription-card-price">
+            $<span className="price">{subheading}</span>
+            {price === 30 ? <span className="text">/month</span> : ""}
+          </div>
+        )}
         <hr className="m-3" />
         <div className="features">
-          {features.map(feature => {
-            return <div className="feature-container">
-            <img src="icons/back.png" className="back-icon" />
-            <span>{feature}</span>
-          </div>
+          {features.map((feature) => {
+            return (
+              <div className="feature-container">
+                <img src="icons/back.png" className="back-icon" />
+                <span>{feature}</span>
+              </div>
+            );
           })}
         </div>
-        <button
-          onClick={() => onPressBuy()}
-        className="buy py-2 my-4">
+        <button onClick={() => onPressBuy()} className="buy py-2 my-4">
           <span className="mx-4 px-2"> Buy Now</span>
         </button>
       </div>
@@ -68,28 +78,26 @@ const Plan = ({ price,features,heading, subheading, planType,onPressBuy ,selecte
 };
 
 class LandingPage extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    this.state= {
-      selectedPlan : null,
-      redirect : false
-    }
+    this.state = {
+      selectedPlan: null,
+      redirect: false,
+    };
+  }
 
-  }
-  
-  onBuyplan = (plan) =>{
-      this.setState({ selectedPlan : plan});
-      localStorage.setItem('selectedPlan',JSON.stringify(plan));
-      this.props.history.push('/register');
-  }
-  
+  onBuyplan = (plan) => {
+    this.setState({ selectedPlan: plan });
+    localStorage.setItem("selectedPlan", JSON.stringify(plan));
+    this.props.history.push("/register");
+  };
+
   renderRedirect = () => {
     if (this.state.redirect) {
-        return <Redirect to='/register' />
+      return <Redirect to="/register" />;
     }
-}
+  };
 
   render() {
     return (
@@ -145,9 +153,7 @@ class LandingPage extends Component {
                 </li>
 
                 <li className="nav-item">
-                  <Link 
-                  to={"/login"} className="nav-link"
-                  >
+                  <Link to={"/login"} className="nav-link">
                     Login
                   </Link>
                 </li>
@@ -280,7 +286,9 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">How The App Works</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                Easily mark your photos for proofing, online viewing, or sharing on social media. Protect and get credit for your work wherever it goes.
+                Easily mark your photos for proofing, online viewing, or sharing
+                on social media. Protect and get credit for your work wherever
+                it goes.
               </p>
               <div className="tab_section">
                 <ul
@@ -537,7 +545,8 @@ class LandingPage extends Component {
               </a>
               <h2 className="bold">Watch The Tutorial</h2>
               <p className="section_sub_heading regular">
-              Mark your product images so that when viewers Pin or share your images, customers can always find your shop!
+                Mark your product images so that when viewers Pin or share your
+                images, customers can always find your shop!
               </p>
             </div>
           </div>
@@ -547,8 +556,9 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">Subscription Plans</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                 Instantly protect and share your photos & videos
-with a custom watermark built in.<br /> Check our Plans
+                Instantly protect and share your photos & videos with a custom
+                watermark built in.
+                <br /> Check our Plans
               </p>
               <div className="row subscription-wrapper">
                 {PLANS.map((plan) => {
@@ -582,20 +592,22 @@ with a custom watermark built in.<br /> Check our Plans
                   <div className="carousel-item active">
                     <img src="icons/quote.png" alt="IMP Quote" />
                     <p className="testimonial medium text_grey lh-35">
-                    ImageMark Pro lets me easily mark and distribute
-my images and videos freely on social media with a
-custom watermark that promotes my blog.
+                      ImageMark Pro lets me easily mark and distribute my images
+                      and videos freely on social media with a custom watermark
+                      that promotes my blog.
                     </p>
                     <img src="icons/rating_four_star.png" alt="IMP Rating" />
                     <div className="clientContainer">
-                      <p className="name text_grey semibold">Chef Boy oh Boy, MyFoodBlog.com</p>
+                      <p className="name text_grey semibold">
+                        Chef Boy oh Boy, MyFoodBlog.com
+                      </p>
                       {/* <p className="designation">Photographer</p> */}
                     </div>
                   </div>
                   <div className="carousel-item">
                     <img src="icons/quote.png" alt="IMP Quote" />
                     <p className="testimonial medium text_grey lh-35">
-                    A huge thank you for your exemplary efforts!"
+                      A huge thank you for your exemplary efforts!"
                     </p>
                     <img src="icons/rating_four_star.png" alt="IMP Rating" />
                     <div className="clientContainer">
@@ -651,8 +663,9 @@ custom watermark that promotes my blog.
               <h2 className="section_heading text_grey">Our Blogs</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                With a custom watermark on your blog images, your fans can share them anywhere online,
-                 and they’ll be promoting your blog when they do it!
+                With a custom watermark on your blog images, your fans can share
+                them anywhere online, and they’ll be promoting your blog when
+                they do it!
               </p>
               <div className="row blogs-conatiner">
                 <div className="col-sm-5 col-md-5 col-lg-3">
@@ -673,7 +686,8 @@ custom watermark that promotes my blog.
                         Image Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
-                      Easily mark your photos for proofing, online viewing, or sharing on social media.
+                        Easily mark your photos for proofing, online viewing, or
+                        sharing on social media.
                       </p>
                       <Link className="text_blue" to="/blog">
                         Read more
@@ -697,7 +711,7 @@ custom watermark that promotes my blog.
                         </span>
                       </p>
                       <p className="blog-title medium text_grey">
-                       Video Editing
+                        Video Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
                         Lorem Ipsum has been the industry's standard dummy
@@ -741,9 +755,7 @@ custom watermark that promotes my blog.
                 </div>
               </div>
               <div className="cta-div">
-                <Link 
-                to={"/blog"}
-                className="view_more text_grey" >
+                <Link to={"/blog"} className="view_more text_grey">
                   VIEW MORE
                 </Link>
               </div>
@@ -755,8 +767,9 @@ custom watermark that promotes my blog.
               <h2 className="section_heading text_grey">News Testimonials</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                Make sure you get the proper credit and recognition for your news image and video posts.
-                 Your post may go viral, but the source will remain clear.
+                Make sure you get the proper credit and recognition for your
+                news image and video posts. Your post may go viral, but the
+                source will remain clear.
               </p>
               <div className="row news-container">
                 <div className="col-sm-12 col-md-5 col-lg-5 news-image">
