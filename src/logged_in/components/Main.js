@@ -181,7 +181,7 @@ function Main(props) {
       const message = {
         id: i,
         profilePicUrl: person.profilePicUrl,
-        date: curUnix,
+        // date: curUnix,
         text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed.",
       };
       curUnix += oneDaySeconds;

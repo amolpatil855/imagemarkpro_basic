@@ -1,6 +1,6 @@
-import image1 from "./images/image1.jpg";
-import image2 from "./images/image2.jpg";
-import image3 from "./images/image3.jpg";
+import image1 from "./images/sample1.png";
+import image2 from "./images/sample2.PNG";
+import image3 from "./images/sample3.PNG";
 import image4 from "./images/image4.jpg";
 import image5 from "./images/image5.jpg";
 import image6 from "./images/image6.jpg";
@@ -12,19 +12,11 @@ import image10 from "./images/image10.jpg";
 export default [
   {
     profilePicUrl: image1,
-    name: "Markus"
+    name: "Sample 1"
   },
   {
     profilePicUrl: image2,
-    name: "David"
+    name: "Sample 2"
   },
-  {
-    profilePicUrl: image3,
-    name: "Arold"
-  },
-  {
-    profilePicUrl: image4,
-    name: "Joanic"
-  }
  
 ];
