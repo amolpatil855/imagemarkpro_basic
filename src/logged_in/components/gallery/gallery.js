@@ -69,14 +69,14 @@ const cards = [{
   id : 2 ,
   imageUrl : "https://cdn.mos.cms.futurecdn.net/6ZSTwXkAVAcsmqP5gvGAKj.jpg",
   heading : "VIDEO EDITING",
-  content : "We are here to help"
-,title : "image2"
+  content : "Video editing applications are typically desktop programs, however there are several cloud-based options that allow you to upload a video and edit the file online. Cloud video editing applications typically allow you to connect to various social and online accounts to share your movie.",
+  title : "image2"
 }, {
   id :3 ,
   imageUrl : "https://www.aer.io/img/blog-images/live-stream-tools-blog.jpg",
   heading : "LIVE STREAMING",
-  content : "We are here to help"
-,title : "image3"
+  content : "Interactive broadcasting creates a higher level of user engagement. Easily embed live interactive broadcasting directly into your app",
+  title : "image3"
 }]
 
 export default function Album() {
