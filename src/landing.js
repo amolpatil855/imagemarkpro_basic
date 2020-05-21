@@ -232,7 +232,8 @@ class LandingPage extends Component {
                     </p>
                     <p className="feature_details regular text_grey">
                       {" "}
-                      With Imagemark pro, you can easily create stunning, professional-quality images with a single click. The process might be simple, but the results are incredibly ..
+                      Easily choose photo, video or Live Streaming, and protect
+                      your intellectual property.
                     </p>
                   </div>
                 </div>
@@ -685,8 +686,10 @@ class LandingPage extends Component {
                         Image Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
-                        Easily mark your photos for proofing, online viewing, or
-                        sharing on social media.
+                        
+                      With Imagemark pro, you can easily create stunning, professional-quality images with a single click. The process might be simple, but the results are incredibly ...
+
+
                       </p>
                       <Link className="text_blue" to="/blog">
                         Read more
@@ -713,9 +716,7 @@ class LandingPage extends Component {
                         Video Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
-                        Lorem Ipsum has been the industry's standard dummy
-                        text.Lorem Ipsum has been the industry's standard dummy
-                        text.
+                       Video editing applications are typically desktop programs, however there are several cloud-based options that allow you to upload a video and edit the file online. Cloud video editing applications typically allow you to connect to various social and online accounts to share your movie.
                       </p>
                       <Link className="text_blue" to="/blog">
                         Read more
@@ -742,9 +743,7 @@ class LandingPage extends Component {
                         Live Streaming
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
-                        Lorem Ipsum has been the industry's standard dummy
-                        text.Lorem Ipsum has been the industry's standard dummy
-                        text.
+                      Interactive broadcasting creates a higher level of user engagement. Easily embed live interactive broadcasting directly into your app.
                       </p>
                       <Link className="text_blue" to="/blog">
                         Read more

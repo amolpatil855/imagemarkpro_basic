@@ -94,7 +94,7 @@ export default [
     date: 1576391600,
     imageSrc: blogPost2,
     snippet:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "Video editing applications are typically desktop programs, however there are several cloud-based options that allow you to upload a video and edit the file online. Cloud video editing applications typically allow you to connect to various social and online accounts to share your movie.",
     content: contentVideoEditing
   },
   {
@@ -102,9 +102,8 @@ export default [
     id: 3,
     date: 1577391600,
     imageSrc: blogPost3,
-    snippet:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    content: contentLivestreaming
+    snippet:"Interactive broadcasting creates a higher level of user engagement. Easily embed live interactive broadcasting directly into your app" ,
+       content: contentLivestreaming
   },
   // {
   //   title: "Post 4",
