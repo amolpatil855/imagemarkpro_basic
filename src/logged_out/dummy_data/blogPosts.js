@@ -4,7 +4,7 @@ import blogPost4 from "./images/blogPost4.jpg";
 import blogPost5 from "./images/blogPost5.jpg";
 import blogPost6 from "./images/blogPost6.jpg";
 
-const blogPost1 = "https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg";
+const blogPost1 = "https://imagemarkpro.com/wp-content/themes/maintheme/images/phone1.png";
 const blogPost2 = "https://cdn.mos.cms.futurecdn.net/6ZSTwXkAVAcsmqP5gvGAKj.jpg";
 const  blogPost3 = "https://www.aer.io/img/blog-images/live-stream-tools-blog.jpg";
 
