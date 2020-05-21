@@ -7,7 +7,7 @@ import blogPost4 from "./images/blogPost4.jpg";
 import blogPost5 from "./images/blogPost5.jpg";
 import blogPost6 from "./images/blogPost6.jpg";
 
-const content = (
+const contentImageEditing = (
   <Fragment>
     <Typography variant="h6" paragraph>
       Imagemarkpro is the applcation which provide you image editing, video editing
@@ -37,6 +37,69 @@ Photo editing is the art of enhancing an image to make it look more like what yo
   </Fragment>
 );
 
+const contentVideoEditing = (
+  <Fragment>
+    <Typography variant="h6" paragraph>
+      Imagemarkpro is the applcation which provide you image editing, video editing
+      and live streaming to most famous social platform 
+    </Typography>
+    <Typography paragraph>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </Typography>
+  
+    <Typography variant="h6" paragraph>
+    What is Video Editing?
+    </Typography>
+    <Typography paragraph>
+Photo editing is the art of enhancing an image to make it look more like what you saw with your eyes. While digital cameras are great tools, capable of capturing a myriad of images, they're also notorious for producing muted colors, low contrast, and off-balanced lighting. Photo editing helps correct these issues to bring out the true beauty of your photo the way you remember it. Use photo editing to bring out the vividness of colors, adjust exposure and get the lighting just right, remove unwanted objects, add photo effects to create a vintage look, and more.
+ The possibilities are endless when it comes to editing photos with Imagemark pro! 
+    </Typography>
+  
+   
+  </Fragment>
+);
+
+const contentLivestreaming = (
+  <Fragment>
+    <Typography variant="h6" paragraph>
+      Imagemarkpro is the applcation which provide you image editing, video editing
+      and live streaming to most famous social platform 
+    </Typography>
+    <Typography paragraph>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </Typography>
+  
+    <Typography variant="h6" paragraph>
+    What is Live Streaming ?
+    </Typography>
+    <Typography paragraph>
+Photo editing is the art of enhancing an image to make it look more like what you saw with your eyes. While digital cameras are great tools, capable of capturing a myriad of images, they're also notorious for producing muted colors, low contrast, and off-balanced lighting. Photo editing helps correct these issues to bring out the true beauty of your photo the way you remember it. Use photo editing to bring out the vividness of colors, adjust exposure and get the lighting just right, remove unwanted objects, add photo effects to create a vintage look, and more.
+ The possibilities are endless when it comes to editing photos with Imagemark pro! 
+    </Typography>
+  
+   
+  </Fragment>
+);
+
+
+
+
 export default [
   {
     title: "Image Edititng",
@@ -45,7 +108,7 @@ export default [
     imageSrc: blogPost1,
     snippet:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    content: content
+    content: contentImageEditing
   },
   {
     title: "Video Editing",
@@ -54,7 +117,7 @@ export default [
     imageSrc: blogPost2,
     snippet:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    content: content
+    content: contentVideoEditing
   },
   {
     title: "Live Streaming",
@@ -63,7 +126,7 @@ export default [
     imageSrc: blogPost3,
     snippet:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    content: content
+    content: contentLivestreaming
   },
   // {
   //   title: "Post 4",
