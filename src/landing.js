@@ -672,7 +672,7 @@ class LandingPage extends Component {
                   <div className="blog-card">
                     <img
                       className="blog-image"
-                      src="images/blog_image.png"
+                      src="https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg"
                       alt="IMP How to create a flimgrian effect"
                     />
                     <div className="blog-div">
@@ -702,7 +702,7 @@ class LandingPage extends Component {
                   <div className="blog-card">
                     <img
                       className="blog-image"
-                      src="images/blog_image.png"
+                      src="https://cdn.mos.cms.futurecdn.net/6ZSTwXkAVAcsmqP5gvGAKj.jpg"
                       alt="IMP How to create a flimgrian effect"
                     />
                     <div className="blog-div">
@@ -729,7 +729,7 @@ class LandingPage extends Component {
                   <div className="blog-card">
                     <img
                       className="blog-image"
-                      src="images/blog_image.png"
+                      src="https://www.aer.io/img/blog-images/live-stream-tools-blog.jpg"
                       alt="IMP How to create a flimgrian effect"
                     />
                     <div className="blog-div">

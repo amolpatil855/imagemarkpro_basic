@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import { Typography } from "@material-ui/core";
-import blogPost1 from "./images/blogPost1.jpg";
-import blogPost2 from "./images/blogPost2.jpg";
-import blogPost3 from "./images/blogPost3.jpg";
 import blogPost4 from "./images/blogPost4.jpg";
 import blogPost5 from "./images/blogPost5.jpg";
 import blogPost6 from "./images/blogPost6.jpg";
+
+const blogPost1 = "https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg";
+const blogPost2 = "https://cdn.mos.cms.futurecdn.net/6ZSTwXkAVAcsmqP5gvGAKj.jpg";
+const  blogPost3 = "https://www.aer.io/img/blog-images/live-stream-tools-blog.jpg";
 
 const contentImageEditing = (
   <Fragment>
@@ -81,7 +82,7 @@ Photo editing is the art of enhancing an image to make it look more like what yo
 
 export default [
   {
-    title: "Image Edititng",
+    title: "Image Editing",
     id: 1,
     date: 1585008000,
     imageSrc: blogPost1,
