@@ -25,29 +25,6 @@ export default [
   {
     profilePicUrl: image4,
     name: "Joanic"
-  },
-  {
-    profilePicUrl: image5,
-    name: "Sophia"
-  },
-  {
-    profilePicUrl: image6,
-    name: "Aaron"
-  },
-  {
-    profilePicUrl: image7,
-    name: "Steven"
-  },
-  {
-    profilePicUrl: image8,
-    name: "Felix"
-  },
-  {
-    profilePicUrl: image9,
-    name: "Vivien"
-  },
-  {
-    profilePicUrl: image10,
-    name: "Leonie"
   }
+ 
 ];
