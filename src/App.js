@@ -26,6 +26,8 @@ function App() {
       email:"admin@admin.com",
       password:"admin"
     }]));
+
+    localStorage.setItem('selectedPlan',`{"heading":"BASIC","subheading":"5","price":5,"features":["Select Image","Add Watermark","Share/Save Your Image"]}`)
   })
   return (
     <BrowserRouter>
