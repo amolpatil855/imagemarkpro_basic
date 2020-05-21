@@ -204,7 +204,7 @@ class LandingPage extends Component {
                 <div className="col-sm-12 col-md-12 col-lg-6">
                   <img
                     className="Imp_app"
-                    src="images/IMP_app_On_Mobile.png"
+                    src="images/mobile.png"
                     alt="IMP Application ScreenShot"
                   />
                 </div>
