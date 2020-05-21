@@ -92,9 +92,8 @@ function CheckoutForm({props,history}) {
             localStorage.setItem('selectedPlan',JSON.stringify(newPlan));
             selectedPlan=newPlan;
           }
-
-          NotificationManager.success('check you email for more details','Payment Success');
             history.push('/c');
+            NotificationManager.success('Please check you email for more details','Payment Success');
         
           //send email to the user
           await axios.post('https://eternus-imagemarkpro.herokuapp.com/subscribe',
