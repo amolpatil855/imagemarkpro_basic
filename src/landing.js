@@ -33,7 +33,7 @@ const PLANS = [
     ]
   },
 ];
-const Plan = ({ features,heading, subheading, planType,onPressBuy ,selectedPlan}) => {
+const Plan = ({ price,features,heading, subheading, planType,onPressBuy ,selectedPlan}) => {
   return (
     <div className="col-sm-6 col-md-6 col-lg-3">
       <div className={selectedPlan ? 'selected-card':'card_features subscription-card'}>
@@ -45,7 +45,7 @@ const Plan = ({ features,heading, subheading, planType,onPressBuy ,selectedPlan}
         </div>:
         <div className="subscription-card-price">
           $<span className="price">{subheading}</span>
-          <span className="text">/month</span>
+          {price === 30 ? <span className="text">/month</span> :""}
         </div>
         }
         <hr className="m-3" />
@@ -135,7 +135,7 @@ class LandingPage extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#subscriptionPlans">
-                    Plans
+                    Pricing
                   </a>
                 </li>
                 <li className="nav-item">
@@ -570,6 +570,7 @@ class LandingPage extends Component {
                       heading={plan.heading}
                       subheading={plan.subheading}
                       planType={plan.planType}
+                      price={plan.price}
                       features={plan.features}
                       onPressBuy={() => this.onBuyplan(plan)}
                       selectedPlan={this.state.selectedPlan}
