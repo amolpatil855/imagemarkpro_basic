@@ -14,15 +14,7 @@ const contentImageEditing = (
       and live streaming to most famous social platform 
     </Typography>
     <Typography paragraph>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet.
+    In the digital age, it is absolutely essential for your business to have an online presence. Whether it’s a website, an e-commerce platform, a social media page or a combination of all three, getting your company online will reap major benefits. Even if your company does not conduct business online, customers and potential customers are expecting to see you online. If they don’t see you there, you could be losing out on the opportunity to increase your customer base and get the word out about your business.
     </Typography>
   
     <Typography variant="h6" paragraph>
@@ -44,24 +36,19 @@ const contentVideoEditing = (
       and live streaming to most famous social platform 
     </Typography>
     <Typography paragraph>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet.
+    In the digital age, it is absolutely essential for your business to have an online presence. Whether it’s a website, an e-commerce platform, a social media page or a combination of all three, getting your company online will reap major benefits. Even if your company does not conduct business online, customers and potential customers are expecting to see you online. If they don’t see you there, you could be losing out on the opportunity to increase your customer base and get the word out about your business.
     </Typography>
   
     <Typography variant="h6" paragraph>
     What is Video Editing?
     </Typography>
     <Typography paragraph>
-Photo editing is the art of enhancing an image to make it look more like what you saw with your eyes. While digital cameras are great tools, capable of capturing a myriad of images, they're also notorious for producing muted colors, low contrast, and off-balanced lighting. Photo editing helps correct these issues to bring out the true beauty of your photo the way you remember it. Use photo editing to bring out the vividness of colors, adjust exposure and get the lighting just right, remove unwanted objects, add photo effects to create a vintage look, and more.
- The possibilities are endless when it comes to editing photos with Imagemark pro! 
-    </Typography>
+    Video editing is the process of manipulating and rearranging video shots to create a new work. Editing is usually considered to be one part of the post production process — other post-production tasks include titling, colour correction, sound mixing, etc.
+
+Many people use the term editing to describe all their 
+post-production work, especially in non-professional situations.
+ Whether or not you choose to be picky about terminology is up to you.
+ Imagemark pro is help you to edit your video faster and smart way.   </Typography>
   
    
   </Fragment>
@@ -74,15 +61,7 @@ const contentLivestreaming = (
       and live streaming to most famous social platform 
     </Typography>
     <Typography paragraph>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet.
+    In the digital age, it is absolutely essential for your business to have an online presence. Whether it’s a website, an e-commerce platform, a social media page or a combination of all three, getting your company online will reap major benefits. Even if your company does not conduct business online, customers and potential customers are expecting to see you online. If they don’t see you there, you could be losing out on the opportunity to increase your customer base and get the word out about your business.
     </Typography>
   
     <Typography variant="h6" paragraph>
