@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense, lazy } from "react";
+import React, { Fragment, Suspense, lazy,useEffect } from "react";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { BrowserRouter, Route, Switch , Redirect } from "react-router-dom";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
@@ -19,6 +19,16 @@ const RegisterPage = lazy(() => import("./register"));
 
  
 function App() {
+  useEffect(() => {
+    localStorage.setItem('users',JSON.stringify([{
+      firstName:"admin",
+      lastName:"admin",
+      email:"admin@admin.com",
+      password:"admin"
+    }]));
+
+    localStorage.setItem('selectedPlan',`{"heading":"BASIC","subheading":"5","price":5,"features":["Select Image","Add Watermark","Share/Save Your Image"]}`)
+  })
   return (
     <BrowserRouter>
 <NotificationContainer />
