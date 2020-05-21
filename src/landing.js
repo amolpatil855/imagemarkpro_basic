@@ -151,13 +151,6 @@ class LandingPage extends Component {
                     Login
                   </Link>
                 </li>
-                {/* <li className="nav-item">
-                  <Link to={"/register"} 
-                  className="nav-link register-cta" 
-                 >
-                    Register
-                  </Link>
-                </li> */}
               </ul>
             </div>
           </nav>
@@ -287,9 +280,7 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">How The App Works</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                ImageMark Pro was developed with the help of video journalists,
-                photographers, to provide a flexible and intuitive video and
-                photo marking solution for professionals or newbies.
+                Easily mark your photos for proofing, online viewing, or sharing on social media. Protect and get credit for your work wherever it goes.
               </p>
               <div className="tab_section">
                 <ul
@@ -546,10 +537,7 @@ class LandingPage extends Component {
               </a>
               <h2 className="bold">Watch The Tutorial</h2>
               <p className="section_sub_heading regular">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-                <br /> Lorem Ipsum has been the industry's standard dummy text
-                ever since the 1500s,
+              Mark your product images so that when viewers Pin or share your images, customers can always find your shop!
               </p>
             </div>
           </div>
@@ -559,9 +547,8 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">Subscription Plans</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                ImageMark Pro was developed with the help of video journalists,
-                photographers, to provide a flexible and intuitive video and
-                photo marking solution for professionals or newbies.
+                 Instantly protect and share your photos & videos
+with a custom watermark built in.<br /> Check our Plans
               </p>
               <div className="row subscription-wrapper">
                 {PLANS.map((plan) => {
@@ -595,10 +582,20 @@ class LandingPage extends Component {
                   <div className="carousel-item active">
                     <img src="icons/quote.png" alt="IMP Quote" />
                     <p className="testimonial medium text_grey lh-35">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                      commodo viverra maecenas accumsan lacus vel facilisis.
+                    ImageMark Pro lets me easily mark and distribute
+my images and videos freely on social media with a
+custom watermark that promotes my blog.
+                    </p>
+                    <img src="icons/rating_four_star.png" alt="IMP Rating" />
+                    <div className="clientContainer">
+                      <p className="name text_grey semibold">Chef Boy oh Boy, MyFoodBlog.com</p>
+                      {/* <p className="designation">Photographer</p> */}
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <img src="icons/quote.png" alt="IMP Quote" />
+                    <p className="testimonial medium text_grey lh-35">
+                    A huge thank you for your exemplary efforts!"
                     </p>
                     <img src="icons/rating_four_star.png" alt="IMP Rating" />
                     <div className="clientContainer">
@@ -606,7 +603,7 @@ class LandingPage extends Component {
                       <p className="designation">Photographer</p>
                     </div>
                   </div>
-                  <div className="carousel-item">
+                  {/* <div className="carousel-item">
                     <img src="icons/quote.png" alt="IMP Quote" />
                     <p className="testimonial medium text_grey lh-35">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -619,21 +616,7 @@ class LandingPage extends Component {
                       <p className="name text_grey semibold">Melvin Louis</p>
                       <p className="designation">Photographer</p>
                     </div>
-                  </div>
-                  <div className="carousel-item">
-                    <img src="icons/quote.png" alt="IMP Quote" />
-                    <p className="testimonial medium text_grey lh-35">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                      commodo viverra maecenas accumsan lacus vel facilisis.
-                    </p>
-                    <img src="icons/rating_four_star.png" alt="IMP Rating" />
-                    <div className="clientContainer">
-                      <p className="name text_grey semibold">Melvin Louis</p>
-                      <p className="designation">Photographer</p>
-                    </div>
-                  </div>
+                  </div> */}
                 </div>
                 <a
                   className="carousel-control-prev"
@@ -668,9 +651,8 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">Our Blogs</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                ImageMark Pro was developed with the help of video journalists,
-                photographers, to provide a flexible and intuitive video and
-                photo marking solution for professionals or newbies.
+                With a custom watermark on your blog images, your fans can share them anywhere online,
+                 and they’ll be promoting your blog when they do it!
               </p>
               <div className="row blogs-conatiner">
                 <div className="col-sm-5 col-md-5 col-lg-3">
@@ -682,22 +664,20 @@ class LandingPage extends Component {
                     />
                     <div className="blog-div">
                       <p className="published-date">
-                        24 Dec, 2020{" "}
+                        24 Mar, 2020{" "}
                         <span>
                           <i>By Admin</i>
                         </span>
                       </p>
                       <p className="blog-title medium text_grey">
-                        Lorem Ipsum is simply dummy text of the printing.
+                        Image Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
-                        Lorem Ipsum has been the industry's standard dummy
-                        text.Lorem Ipsum has been the industry's standard dummy
-                        text.
+                      Easily mark your photos for proofing, online viewing, or sharing on social media.
                       </p>
-                      <a className="text_blue" href="#readMore">
+                      <Link className="text_blue" to="/blog">
                         Read more
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -711,22 +691,22 @@ class LandingPage extends Component {
                     />
                     <div className="blog-div">
                       <p className="published-date">
-                        24 Dec, 2020{" "}
+                        22 Apr, 2020{" "}
                         <span>
                           <i>By Admin</i>
                         </span>
                       </p>
                       <p className="blog-title medium text_grey">
-                        Lorem Ipsum is simply dummy text of the printing.
+                       Video Editing
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
                         Lorem Ipsum has been the industry's standard dummy
                         text.Lorem Ipsum has been the industry's standard dummy
                         text.
                       </p>
-                      <a className="text_blue" href="#readMore">
+                      <Link className="text_blue" to="/blog">
                         Read more
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -740,22 +720,22 @@ class LandingPage extends Component {
                     />
                     <div className="blog-div">
                       <p className="published-date">
-                        24 Dec, 2020{" "}
+                        06 May, 2020{" "}
                         <span>
                           <i>By Admin</i>
                         </span>
                       </p>
                       <p className="blog-title medium text_grey">
-                        Lorem Ipsum is simply dummy text of the printing.
+                        Live Streaming
                       </p>
                       <p className="blog-content text_grey truncate-overflow">
                         Lorem Ipsum has been the industry's standard dummy
                         text.Lorem Ipsum has been the industry's standard dummy
                         text.
                       </p>
-                      <a className="text_blue" href="#readMore">
+                      <Link className="text_blue" to="/blog">
                         Read more
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -775,9 +755,8 @@ class LandingPage extends Component {
               <h2 className="section_heading text_grey">News Testimonials</h2>
               <p className="section_sub_heading text_grey">
                 {" "}
-                ImageMark Pro was developed with the help of video journalists,
-                photographers, to provide a flexible and intuitive video and
-                photo marking solution for professionals or newbies.
+                Make sure you get the proper credit and recognition for your news image and video posts.
+                 Your post may go viral, but the source will remain clear.
               </p>
               <div className="row news-container">
                 <div className="col-sm-12 col-md-5 col-lg-5 news-image">
@@ -932,7 +911,7 @@ class LandingPage extends Component {
                     <a href="#features">Features</a>
                     <a href="#howItWorks">How it works</a>
                     <a href="#ourBlogs">Blogs</a>
-                    <a href="#subscriptionPlans">Plans</a>
+                    <a href="#subscriptionPlans">Pricing</a>
                     <a href="#aboutUs">About Us</a>
                   </div>
                   <div className="btn-block">
