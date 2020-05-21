@@ -59,7 +59,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
+const cards = [{
+  id : 1 ,
+  imageUrl : "https://cdn.pizap.com/pizapfiles/images/easy_photo_editor.jpg",
+  heading : "IMAGE EDITING",
+  content : "We are here to help"
+,title : "image1"
+}, {
+  id : 2 ,
+  imageUrl : "https://cdn.mos.cms.futurecdn.net/6ZSTwXkAVAcsmqP5gvGAKj.jpg",
+  heading : "VIDEO EDITING",
+  content : "We are here to help"
+,title : "image2"
+}, {
+  id :3 ,
+  imageUrl : "https://www.aer.io/img/blog-images/live-stream-tools-blog.jpg",
+  heading : "LIVE STREAMING",
+  content : "We are here to help"
+,title : "image3"
+}]
 
 export default function Album() {
   const classes = useStyles();
@@ -87,15 +105,15 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image={card.imageUrl}
+                    title={card.title}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {card.heading}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      {card.content}
                     </Typography>
                   </CardContent>
                   {/* <CardActions>

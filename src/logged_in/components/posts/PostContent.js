@@ -120,15 +120,15 @@ function PostContent(props) {
   return (
     <Paper>
       <Toolbar className={classes.toolbar}>
-        <Typography variant="h6">Your Posts</Typography>
-        <Button
+        <Typography variant="h6">Presets</Typography>
+        {/* <Button
           variant="contained"
           color="secondary"
           onClick={openAddPostModal}
           disableElevation
         >
           Add Post
-        </Button>
+        </Button> */}
       </Toolbar>
       <Divider />
       {printImageGrid()}
