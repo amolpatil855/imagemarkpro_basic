@@ -11,6 +11,8 @@ import {
   withStyles,
 } from "@material-ui/core";
 
+import {NotificationManager} from 'react-notifications';
+
 import Avatar from "@material-ui/core/Avatar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -71,7 +73,7 @@ const styles = (theme) => ({
   },
 });
 
-class LoginPage extends Component {
+class RegisterPage extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -306,7 +308,7 @@ class LoginPage extends Component {
   }
 }
 
-LoginPage.propTypes = {
+RegisterPage.propTypes = {
   classes: PropTypes.object.isRequired,
   handleMobileDrawerOpen: PropTypes.func,
   handleMobileDrawerClose: PropTypes.func,
@@ -316,4 +318,4 @@ LoginPage.propTypes = {
   openLoginDialog: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(memo(LoginPage));
+export default withStyles(styles, { withTheme: true })(memo(RegisterPage));

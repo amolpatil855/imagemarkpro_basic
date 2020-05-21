@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { NotificationManager } from 'react-notifications';
 import Grid from "@material-ui/core/Grid";
 import { Button, CircularProgress } from "@material-ui/core";
 import axios from "axios";
@@ -92,11 +93,9 @@ function CheckoutForm({props,history}) {
             selectedPlan=newPlan;
           }
 
-          
-            history.push('/c')
+          NotificationManager.success('check you email for more details','Payment Success');
+            history.push('/c');
         
-          
-
           //send email to the user
           await axios.post('https://eternus-imagemarkpro.herokuapp.com/subscribe',
           {

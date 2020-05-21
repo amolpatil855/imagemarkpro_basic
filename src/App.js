@@ -1,6 +1,8 @@
 import React, { Fragment, Suspense, lazy } from "react";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { BrowserRouter, Route, Switch , Redirect } from "react-router-dom";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 import * as serviceWorker from "./serviceWorker";
@@ -15,10 +17,11 @@ const LandingPage = lazy(() => import("./landing"));
 const LoginPage = lazy(() => import("./login"));
 const RegisterPage = lazy(() => import("./register"));
 
-
+ 
 function App() {
   return (
     <BrowserRouter>
+<NotificationContainer />
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <GlobalStyles />

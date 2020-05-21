@@ -12,6 +12,7 @@ import {
 
 } from "@material-ui/core";
 
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -90,9 +91,7 @@ class LoginPage extends Component {
 
 
     signinUser = () => {
-
-        console.log("login by ", this.state);
-        
+     
        let user =  {
         email : this.state.email,
         password :  this.state.password

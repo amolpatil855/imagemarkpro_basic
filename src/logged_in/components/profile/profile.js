@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import  {NotificationManager} from 'react-notifications';
 
 class ProfilePage extends Component {
 
@@ -25,8 +26,10 @@ class ProfilePage extends Component {
 
 
     componentDidMount = () =>{
-        let user =  JSON.parse(localStorage.getItem('currentUser'));
-        console.log(user);
+        let allUsers = [...JSON.parse(localStorage.getItem('users'))];
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let user = allUsers.find(user => user.email === currentUser.email);
+        
         this.setState({
             firstName : user.firstName,
             lastName : user.lastName,
@@ -53,8 +56,7 @@ class ProfilePage extends Component {
 
         ///set in local storage
         localStorage.setItem('users',JSON.stringify(users));
-       
-        alert("Your Profile is updated successfully");
+        NotificationManager.info('Profile updated successfully!');
 
     }
 
