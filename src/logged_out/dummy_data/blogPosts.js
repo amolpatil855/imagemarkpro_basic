@@ -85,9 +85,8 @@ export default [
     id: 1,
     date: 1576281600,
     imageSrc: blogPost1,
-    snippet:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    content: contentImageEditing
+    snippet:"With Imagemark pro, you can easily create stunning, professional-quality images with a single click. The process might be simple, but the results are incredibly ...", 
+ content: contentImageEditing
   },
   {
     title: "Video Editing",

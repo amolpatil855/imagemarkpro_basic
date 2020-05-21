@@ -232,8 +232,7 @@ class LandingPage extends Component {
                     </p>
                     <p className="feature_details regular text_grey">
                       {" "}
-                      Easily choose photo, video or Live Streaming, and protect
-                      your intellectual property.
+                      With Imagemark pro, you can easily create stunning, professional-quality images with a single click. The process might be simple, but the results are incredibly ..
                     </p>
                   </div>
                 </div>
