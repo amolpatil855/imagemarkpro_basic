@@ -83,15 +83,15 @@ export default [
   {
     title: "Image Edititng",
     id: 1,
-    date: 1576281600,
+    date: 1585008000,
     imageSrc: blogPost1,
     snippet:"With Imagemark pro, you can easily create stunning, professional-quality images with a single click. The process might be simple, but the results are incredibly ...", 
- content: contentImageEditing
+   content: contentImageEditing
   },
   {
     title: "Video Editing",
     id: 2,
-    date: 1576391600,
+    date: 1587513600,
     imageSrc: blogPost2,
     snippet:
       "Video editing applications are typically desktop programs, however there are several cloud-based options that allow you to upload a video and edit the file online. Cloud video editing applications typically allow you to connect to various social and online accounts to share your movie.",
@@ -100,7 +100,7 @@ export default [
   {
     title: "Live Streaming",
     id: 3,
-    date: 1577391600,
+    date: 1588723200,
     imageSrc: blogPost3,
     snippet:"Interactive broadcasting creates a higher level of user engagement. Easily embed live interactive broadcasting directly into your app" ,
        content: contentLivestreaming
