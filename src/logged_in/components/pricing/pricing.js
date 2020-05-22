@@ -161,7 +161,7 @@ export default function Pricing() {
                   titleTypographyProps={{ align: "center" }}
                   subheaderTypographyProps={{ align: "center" }}
                   className={classes.cardHeader}
-                  action={tier.heading === currentUser.selectedPlan.heading ? <span className="badge badge-danger">Active</span> : null}
+                  action={tier.heading === currentUser?.selectedPlan.heading ? <span className="badge badge-danger">Active</span> : null}
                 />
                 <CardContent>
                   <div className={classes.cardPricing}>
@@ -194,7 +194,7 @@ export default function Pricing() {
                       setNewPlan(tier);
                       setUpgradePlan(true)
                     }}
-                    disabled={tier.price <= currentUser.selectedPlan.price}
+                    disabled={tier.price <= currentUser?.selectedPlan.price}
                   >
                     {tier.buttonText}
                   </Button>
@@ -214,11 +214,11 @@ export default function Pricing() {
           <h5 className="text-danger mb-3 font-weight-light">{newPlan?.heading} PLAN - ${newPlan?.price}</h5>
           <StripeCheckout
             type="upgrade"
-            plan={currentUser.selectedPlan}
+            plan={currentUser?.selectedPlan}
             newPlan={newPlan}
-            email={currentUser.email}
-            firstName={currentUser.firstName}
-            lastName={currentUser.lastName}
+            email={currentUser?.email}
+            firstName={currentUser?.firstName}
+            lastName={currentUser?.lastName}
           />
          
           <div className="alert alert-info">

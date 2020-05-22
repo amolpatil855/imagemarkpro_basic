@@ -89,7 +89,7 @@ function CheckoutForm({props,history}) {
             return
           }
 
-          users.push(user);
+          if(type==='pay') users.push(user);
 
           localStorage.setItem("users", JSON.stringify(users));
           localStorage.setItem("currentUser", JSON.stringify(user));
@@ -99,7 +99,22 @@ function CheckoutForm({props,history}) {
           if(type==='upgrade'){
             localStorage.setItem('selectedPlan',JSON.stringify(newPlan));
             selectedPlan=newPlan;
+
+            //find user and update the plan in the array
+            let users = [...JSON.parse(localStorage.getItem('users'))];
+            
+            let loggedInUser = users.find(user => user.email === email);
+            let loggedInUserIndex = users.findIndex(user => user.email === email);
+            loggedInUser = {...loggedInUser,selectedPlan};
+    
+            //update users array
+            users[loggedInUserIndex] = loggedInUser;
+    
+            //set in local storage
+            localStorage.setItem('currentUser',JSON.stringify(loggedInUser));
+            localStorage.setItem('users',JSON.stringify(users));
           }
+
             history.push('/c');
             NotificationManager.success('Please check you email for more details','Payment Success');
         
