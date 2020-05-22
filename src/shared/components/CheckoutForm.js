@@ -36,7 +36,7 @@ function CheckoutForm({props,history}) {
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
-    try {
+    try { 
       setLoading(true);
       let response = await axios.post(
         "https://eternus-imagemarkpro.herokuapp.com/payment",
@@ -79,7 +79,15 @@ function CheckoutForm({props,history}) {
             lastName,
             email,
             password,
+            selectedPlan
           };
+
+          //check if user already exists
+          if(type === 'pay' && users.find(user => user.email === email)){
+            setLoading(false);
+            NotificationManager.error("User already exists");
+            return
+          }
 
           users.push(user);
 

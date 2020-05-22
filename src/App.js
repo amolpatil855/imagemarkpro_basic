@@ -20,14 +20,14 @@ const RegisterPage = lazy(() => import("./register"));
  
 function App() {
   useEffect(() => {
-    localStorage.setItem('selectedPlan',`{"heading":"BASIC","subheading":"5","price":5,"features":["Select Image","Add Watermark","Share/Save Your Image"]}`)
     let users = JSON.parse(localStorage.getItem('users'));
     if(users) return
     localStorage.setItem('users',JSON.stringify([{
       firstName:"admin",
       lastName:"admin",
       email:"admin@admin.com",
-      password:"admin"
+      password:"admin",
+      selectedPlan:`{"heading":"BASIC","subheading":"5","price":5,"features":["Select Image","Add Watermark","Share/Save Your Image"]}`
     }]));
   })
   return (
